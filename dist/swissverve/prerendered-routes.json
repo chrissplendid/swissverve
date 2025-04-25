@@ -1,5 +1,9 @@
 {
   "routes": {
-    "/": {}
+    "/": {},
+    "/dashboard": {},
+    "/dashboard/deposit": {},
+    "/dashboard/internal-transfer": {},
+    "/register": {}
   }
 }

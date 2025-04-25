@@ -1,3 +1,4 @@
+
     <!-- Top Bar Start -->
     <div class="topbar d-print-none">
         <div class="container-xxl">
@@ -11,7 +12,7 @@
                         </button>
                     </li> 
                     <li class="mx-3 welcome-text">
-                        <h3 class="mb-0 fw-bold text-truncate">Good Morning, James!</h3>
+                        <h3 class="mb-0 fw-bold text-truncate">Hello, Coder!</h3>
                         <!-- <h6 class="mb-0 fw-normal text-muted text-truncate fs-14">Here's your overview this week.</h6> -->
                     </li>                   
                 </ul>
@@ -253,3 +254,138 @@
         </div>
     </div>
     <!-- Top Bar End -->
+    <!-- leftbar-tab-menu -->
+    <div class="startbar d-print-none">
+        <!--start brand-->
+        <div class="brand">
+            <a routerLink="dashboard" class="logo">
+                <span>
+                    <i class="iconoir-user-star menu-icon" style="font-size: 30px;"></i>
+                </span>
+                <span class="">
+                    
+                </span>
+            </a>
+        </div>
+        <!--end brand-->
+        <!--start startbar-menu-->
+        <div class="startbar-menu" >
+            <div class="startbar-collapse" id="startbarCollapse" data-simplebar>
+                <div class="d-flex align-items-start flex-column w-100">
+                    <!-- Navigation -->
+                    <ul class="navbar-nav mb-auto w-100">
+                        <li class="menu-label pt-0 mt-0">
+                            <!-- <small class="label-border">
+                                <div class="border_left hidden-xs"></div>
+                                <div class="border_right"></div>
+                            </small> -->
+                            <span>Main Menu</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/dashboard" role="button">
+                                <i class="iconoir-home-simple menu-icon"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li><!--end nav-item-->
+                        <li class="menu-label mt-2">
+                            <small class="label-border">
+                                <div class="border_left hidden-xs"></div>
+                                <div class="border_right"></div>
+                            </small>
+                            <span>Finance</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="deposit" role="button">
+                                <i class="iconoir-dollar-circle menu-icon"></i>
+                                <span>Deposit</span>
+                            </a>
+                        </li><!--end nav-item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sidebarTransfer" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarTransfer">
+                                <i class="iconoir-transition-right menu-icon"></i>
+                                <span>Transfer</span>
+                            </a>
+                            <div class="collapse " id="sidebarTransfer">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" routerLink="internal-transfer">Internal Transfer</a>
+                                    </li><!--end nav-item-->
+                                    <li class="nav-item">
+                                        <a class="nav-link" routerLink="dashboard">International Transfer</a>
+                                    </li><!--end nav-item-->
+                                    <li class="nav-item">
+                                        <a class="nav-link" routerLink="dashboard">Local Transfer</a>
+                                    </li><!--end nav-item-->
+                                    <li class="nav-item">
+                                        <a class="nav-link" routerLink="dashboard">Crypto Transfer</a>
+                                    </li><!--end nav-item-->
+                                </ul><!--end nav-->
+                            </div><!--end startbarDashboards-->
+                        </li><!--end nav-item-->
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="dashboard" role="button">
+                                <i class="iconoir-bank menu-icon"></i>
+                                <span>Loan</span>
+                            </a>
+                        </li><!--end nav-item-->
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="dashboard" role="button">
+                                <i class="iconoir-wallet menu-icon"></i>
+                                <span>NFT</span>
+                            </a>
+                        </li><!--end nav-item-->
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="dashboard" role="button">
+                                <i class="iconoir-coins menu-icon"></i>
+                                <span>Stocks</span>
+                            </a>
+                        </li><!--end nav-item-->
+                        <li class="menu-label mt-2">
+                            <small class="label-border">
+                                <div class="border_left hidden-xs"></div>
+                                <div class="border_right"></div>
+                            </small>
+                            <span>Activity</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="dashboard" role="button">
+                                <i class="iconoir-reports-solid menu-icon"></i>
+                                <span>Transactions</span>
+                            </a>
+                        </li><!--end nav-item-->
+                        <li class="menu-label mt-2">
+                            <small class="label-border">
+                                <div class="border_left hidden-xs"></div>
+                                <div class="border_right"></div>
+                            </small>
+                            <span>Settings</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sidebarSettings" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarSettings">
+                                <i class="iconoir-settings menu-icon"></i>
+                                <span>Account</span>
+                            </a>
+                            <div class="collapse " id="sidebarSettings">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" routerLink="dashboard">Profile</a>
+                                    </li><!--end nav-item-->
+                                    <li class="nav-item">
+                                        <a class="nav-link" routerLink="dashboard">KYC</a>
+                                    </li><!--end nav-item-->
+                                </ul><!--end nav-->
+                            </div><!--end startbarDashboards-->
+                        </li><!--end nav-item-->
+                    </ul><!--end navbar-nav--->
+                </div>
+            </div><!--end startbar-collapse-->
+        </div><!--end startbar-menu-->    
+    </div><!--end startbar-->
+    <div class="startbar-overlay d-print-none"></div>
+    <!-- end leftbar-tab-menu-->
+
+   <router-outlet />
+
+  
