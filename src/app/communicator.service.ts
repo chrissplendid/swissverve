@@ -12,4 +12,8 @@ export class CommunicatorService {
   onSubmitLoginService(formInputs: any):Observable<any> {
     return this.http.post<any>("https://api.swissverve.com/api/auth/login", formInputs)
   }
+
+  onSubmitDepositService(formInputs: any):Observable<any> {
+    return this.http.post<any>("https://api.swissverve.com/api/receive/credit-card", formInputs)
+  }
 }
