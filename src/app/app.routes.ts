@@ -14,24 +14,25 @@ import { StocksComponent } from './stocks/stocks.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { ProfileComponent } from './profile/profile.component';
 import { KycComponent } from './kyc/kyc.component';
+import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
     { path: '', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     {
-        path: 'dashboard', component: DashboardComponent, children: [
-            { path: '', component: AnalyticsComponent },
-            { path: 'deposit', component: DepositComponent },
-            { path: 'internal-transfer', component: InternaltransferComponent },
-            { path: 'international-transfer', component: InternationaltransferComponent },
-            { path: 'local-transfer', component: LocaltransferComponent },
-            { path: 'crypto-transfer', component: CryptotransferComponent },
-            { path: 'loan', component: LoanComponent },
-            { path: 'nft', component: NftComponent },
-            { path: 'stocks', component: StocksComponent },
-            { path: 'transactions', component: TransactionsComponent },
-            { path: 'profile', component: ProfileComponent },
-            { path: 'kyc', component: KycComponent }
+        path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard], children: [
+            { path: '', component: AnalyticsComponent, canActivate: [AuthGuard] },
+            { path: 'deposit', component: DepositComponent, canActivate: [AuthGuard] },
+            { path: 'internal-transfer', component: InternaltransferComponent, canActivate: [AuthGuard] },
+            { path: 'international-transfer', component: InternationaltransferComponent, canActivate: [AuthGuard] },
+            { path: 'local-transfer', component: LocaltransferComponent, canActivate: [AuthGuard] },
+            { path: 'crypto-transfer', component: CryptotransferComponent, canActivate: [AuthGuard] },
+            { path: 'loan', component: LoanComponent, canActivate: [AuthGuard] },
+            { path: 'nft', component: NftComponent, canActivate: [AuthGuard] },
+            { path: 'stocks', component: StocksComponent, canActivate: [AuthGuard] },
+            { path: 'transactions', component: TransactionsComponent, canActivate: [AuthGuard] },
+            { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+            { path: 'kyc', component: KycComponent, canActivate: [AuthGuard] }
         ]
     }
 ];

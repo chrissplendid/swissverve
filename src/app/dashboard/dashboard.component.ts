@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { RouterModule, Router } from '@angular/router';
+import { CommunicatorService } from '../communicator.service';
+import { Component, OnInit  } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service'
+import { RouterModule, Router } from '@angular/router';
 
 
 @Component({
@@ -9,12 +10,33 @@ import { CookieService } from 'ngx-cookie-service'
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent {
-  constructor(private router: Router, private cookieService: CookieService) {}
+export class DashboardComponent implements OnInit {
+  username: any;
+  email: any;
+
+  // A CONSTRUCTOR METHOD THAT RUNS BEFORE THE PAGE INITIALIZES
+  constructor(private communicatorService: CommunicatorService, private cookieService: CookieService, private router: Router) {}
 
   logout() {
     this.cookieService.delete("userToken");
     this.router.navigate(["/"]);
+  }
+
+  ngOnInit(): void {
+    /* GET LOGGED IN USER DATA FROM THE SERVER THROUGH A SERVICE METHOD */
+    this.communicatorService.onLoginService().subscribe({
+      next: (res) => {
+        console.log(res.data);
+        if(res.status == true) {
+          this.username = res.data.username;
+          this.email = res.data.email;
+        } else {
+          alert("Error Getting User Data!");
+        }
+      },
+      error: () => {}
+    })
+    
   }
 
 }
