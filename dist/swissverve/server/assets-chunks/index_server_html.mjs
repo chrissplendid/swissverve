@@ -2,7 +2,7 @@ export default `<!doctype html>
 <html lang="en" dir="ltr" data-startbar="dark" data-bs-theme="light">
 
 <head>
-    
+
 
   <meta charset="utf-8"/>
   <title>Swissverve | Swissverve - Your Trusted Online Banking System</title>
@@ -16,12 +16,17 @@ export default `<!doctype html>
 
 
 
-<link rel="stylesheet" href="https://swissverve.com/assets/libs/jsvectormap/css/jsvectormap.min.css">
+  <!-- <link rel="stylesheet" href="https://swissverve.com/assets/libs/jsvectormap/css/jsvectormap.min.css"> -->
 
-<!-- App css -->
-<link href="https://swissverve.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-<link href="https://swissverve.com/assets/css/icons.min.css" rel="stylesheet" type="text/css"/>
-<link href="https://swissverve.com/assets/css/app.min.css" rel="stylesheet" type="text/css"/>
+  <!-- App css -->
+  <link href="https://swissverve.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://swissverve.com/assets/css/icons.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://swissverve.com/assets/css/app.min.css" rel="stylesheet" type="text/css"/>
+
+  <!--  "src/assets/libs/jsvectormap/css/jsvectormap.min.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/icons.min.css",
+              "src/assets/css/app.min.css", -->
 
 
 <link rel="stylesheet" href="styles-Y6VAXYGL.css"></head>
@@ -30,12 +35,12 @@ export default `<!doctype html>
 </script>
   <app-root></app-root>
 
-  
-   <!-- Javascript  -->
-    <!-- vendor js -->
-    
-    <!--<script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>-->
-    <script src="https://swissverve.com/assets/libs/simplebar/simplebar.min.js"></script>
+
+  <!-- Javascript  -->
+  <!-- vendor js -->
+
+  <!--<script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+  <script src="https://swissverve.com/assets/libs/simplebar/simplebar.min.js"></script>
 
     <script src="https://swissverve.com/assets/libs/apexcharts/apexcharts.min.js"></script>
     <script src="https://swissverve.com/assets/data/stock-prices.js"></script>
@@ -44,6 +49,15 @@ export default `<!doctype html>
     <script src="https://swissverve.com/assets/js/pages/index.init.js"></script>
     <script src="https://swissverve.com/assets/js/pages/ecommerce-index.init.js"></script>
     <script src="https://swissverve.com/assets/js/app.js"></script>
-<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-CV4GDUE4.js" defer=""></script><script src="main-WYIJPD3R.js" type="module"></script></body>
+
+    <!-- "src/assets/libs/simplebar/simplebar.min.js",
+              "src/assets/libs/apexcharts/apexcharts.min.js",
+              "src/assets/data/stock-prices.js",
+              "src/assets/libs/jsvectormap/js/jsvectormap.min.js",
+              "src/assets/libs/jsvectormap/maps/world.js",
+              "src/assets/js/pages/index.init.js",
+              "src/assets/js/pages/ecommerce-index.init.js",
+              "src/assets/js/app.js" -->
+<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-CV4GDUE4.js" defer=""></script><script src="main-5VB2KHCX.js" type="module"></script></body>
 
 </html>`;

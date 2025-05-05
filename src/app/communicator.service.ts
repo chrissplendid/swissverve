@@ -37,6 +37,10 @@ export class CommunicatorService {
     return this.http.post<T>(url, body, { headers });
   }
 
+  getTransactionsService(): Observable<any> {
+    return this.getData<any>(`${this.BASE_URL}/transactions`);
+  }
+
   onLoginService(): Observable<any> {
     return this.getData<any>(`${this.BASE_URL}/auth`);
   }

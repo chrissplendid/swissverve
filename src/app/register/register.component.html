@@ -15,7 +15,17 @@
                                 </div>
                             </div>
                             <div class="card-body pt-0">                                    
-                                <form class="my-4" (ngSubmit)="register(registerationData)" #registerationData="ngForm">            
+                                <form class="my-4" (ngSubmit)="register(registerationData)" #registerationData="ngForm"> 
+                                    <div class="form-group mb-2">
+                                        <label class="form-label" for="firstName">First Name</label>
+                                        <input type="text" class="form-control" id="firstName" name="firstname" placeholder="Enter first name" ngModel required>                               
+                                    </div><!--end form-group--> 
+
+                                    <div class="form-group mb-2">
+                                        <label class="form-label" for="lastName">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName" name="lastname" placeholder="Enter last name" ngModel required>                               
+                                    </div><!--end form-group--> 
+
                                     <div class="form-group mb-2">
                                         <label class="form-label" for="username">Username</label>
                                         <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" ngModel required>                               
@@ -27,12 +37,29 @@
                                     </div><!--end form-group--> 
 
                                     <div class="form-group mb-2">
+                                        <label class="form-label" for="country">Country</label>
+                                        <select class="form-select" aria-label="Default select example" name="country" ngModel required>
+                                            <option disabled selected>- Select Country -*</option>
+                                            <option *ngFor="let country of countries" value="{{ country.name }}">{{ country.name }}</option>
+                                          </select>                             
+                                    </div><!--end form-group--> 
+
+                                    <div class="form-group mb-2">
                                         <label class="form-label" for="account_type">Account Type</label>
                                         <select class="form-select" aria-label="Default select example" name="account_type" ngModel required>
                                             <option disabled selected>- Select Account Type -*</option>
                                             <option value="checking">Checking</option>
                                             <option value="savings">Savings</option>
                                             <option value="fixed_deposit">Fixed Deposit</option>
+                                          </select>                             
+                                    </div><!--end form-group--> 
+
+                                    <div class="form-group mb-2">
+                                        <label class="form-label" for="currency">Currency</label>
+                                        <select class="form-select" aria-label="Default select example" name="currency" ngModel required>
+                                            <option disabled selected>- Select Account Type -*</option>
+                                            <option value="USD">USD</option>
+                                            <option value="EUR">EUR</option>
                                           </select>                             
                                     </div><!--end form-group--> 
         

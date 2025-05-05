@@ -14,6 +14,9 @@ export class DepositComponent {
   note: any;
   spend: boolean = true;
 
+  // A CONSTRUCTOR METHOD THAT RUNS BEFORE THE PAGE INITIALIZES
+  constructor(private communicatorService: CommunicatorService) {}
+
   deposit(depositData: NgForm) {
      // A JSON DATA OF THE LOGIN INPUTS
      let depositJSONData = {
@@ -36,7 +39,5 @@ export class DepositComponent {
     })
   }
 
-  // A CONSTRUCTOR METHOD THAT RUNS BEFORE THE PAGE INITIALIZES
-  constructor(private communicatorService: CommunicatorService) {}
 
 }

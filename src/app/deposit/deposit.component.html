@@ -1,4 +1,4 @@
-<!-- NEW CATEGORY -->
+<!-- NEW DEPOSIT -->
 <div class="page-wrapper">
 
     <!-- Page Content-->
@@ -10,17 +10,17 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="row align-items-center">
-                                <div class="col p-3">                      
+                                <div class="col">                      
                                     <h4 class="card-title">Add Funds</h4>                      
                                 </div><!--end col-->
                             </div>  <!--end row-->                                  
                         </div><!--end card-header-->
                         <form (ngSubmit)="deposit(depositData)" #depositData="ngForm">
-                            <div class="card-body pt-5">
+                            <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-12">    
                                         <div class="mb-3 row">
-                                            <label class="col-sm-2 col-form-label text-end">Payment System</label>
+                                            <label class="col-sm-2 col-form-label">Payment System</label>
                                             <div class="col-sm-10">
                                                 <select name="currency" class="form-select" aria-label="Default select example" ngModel required>
                                                     <option value="BTC" selected>Bitcoin</option>
@@ -32,7 +32,7 @@
 
                                     <div class="col-lg-12">
                                         <div class="mb-3 row">
-                                            <label for="example-text-input" class="col-sm-2 col-form-label text-end">Amount</label>
+                                            <label for="example-text-input" class="col-sm-2 col-form-label">Amount</label>
                                             <div class="col-sm-10">
                                                 <input name="amount" class="form-control" type="text" placeholder="Deposit Amount" id="example-text-input" ngModel required>
                                             </div>
