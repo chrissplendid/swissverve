@@ -13,7 +13,7 @@ export default `<!DOCTYPE html><html lang="en" dir="ltr" data-startbar="dark" da
 
 
 
-  <!-- <link rel="stylesheet" href="https://swissverve.com/assets/libs/jsvectormap/css/jsvectormap.min.css"> -->
+  <link rel="stylesheet" href="https://swissverve.com/assets/libs/jsvectormap/css/jsvectormap.min.css">
 
   <!-- App css -->
   <link href="https://swissverve.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -56,6 +56,6 @@ export default `<!DOCTYPE html><html lang="en" dir="ltr" data-startbar="dark" da
               "src/assets/js/pages/index.init.js",
               "src/assets/js/pages/ecommerce-index.init.js",
               "src/assets/js/app.js" -->
-<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-CV4GDUE4.js" defer></script><script src="main-5VB2KHCX.js" type="module"></script>
+<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-CV4GDUE4.js" defer></script><script src="main-HVZTDKUI.js" type="module"></script>
 
 <script id="ng-state" type="application/json">{"__nghData__":[{},{"c":{"0":[{"i":"c3708398052","r":1}]}}]}</script></body></html>`;
