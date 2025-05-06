@@ -28,12 +28,16 @@ export class LoginComponent {
     // SEND LOGIN INPUTS TO THE SERVER THROUGH A SERVICE METHOD
     this.communicatorService.onSubmitLoginService(loginJSONData).subscribe({
       next: (res) => {
-        if(res.data.token) {
-          this.cookieService.set("userToken", res.data.token);
-          alert(res.message)
-          this.router.navigate(["dashboard"]);
+        if (res) {
+          alert(res.message);
+          if (res.data.token) {
+            this.cookieService.set("userToken", res.data.token);
+            this.router.navigate(["dashboard"]);
+          } else {
+            alert("Unauthorized!")
+          }
         } else {
-          alert("Unauthorized!");
+          alert("Error!");
         }
       },
       error: () => {}

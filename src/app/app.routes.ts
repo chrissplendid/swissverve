@@ -1,23 +1,30 @@
+import { AboutComponent } from './about/about.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
+import { AuthGuard } from './auth.guard';
+import { CryptotransferComponent } from './cryptotransfer/cryptotransfer.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DepositComponent } from './deposit/deposit.component';
+import { HomeComponent } from './home/home.component';
 import { Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { AnalyticsComponent } from './analytics/analytics.component';
-import { DepositComponent } from './deposit/deposit.component';
 import { InternaltransferComponent } from './internaltransfer/internaltransfer.component';
 import { InternationaltransferComponent } from './internationaltransfer/internationaltransfer.component';
 import { LocaltransferComponent } from './localtransfer/localtransfer.component';
-import { CryptotransferComponent } from './cryptotransfer/cryptotransfer.component';
 import { LoanComponent } from './loan/loan.component';
 import { NftComponent } from './nft/nft.component';
 import { StocksComponent } from './stocks/stocks.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { ProfileComponent } from './profile/profile.component';
 import { KycComponent } from './kyc/kyc.component';
-import { AuthGuard } from './auth.guard';
+import { NavComponent } from './nav/nav.component';
 
 export const routes: Routes = [
-    { path: '', component: LoginComponent },
+    { path: '', component: NavComponent, children: [
+        { path: '', component: HomeComponent },
+        { path: 'about', component: AboutComponent }
+    ]},
+    { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     {
         path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard], children: [
