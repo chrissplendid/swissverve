@@ -1,5 +1,5 @@
 import { CommunicatorService } from '../communicator.service';
-import { Component, OnInit  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service'
 import { RouterModule, Router } from '@angular/router';
 
@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
   email: any;
 
   // A CONSTRUCTOR METHOD THAT RUNS BEFORE THE PAGE INITIALIZES
-  constructor(private communicatorService: CommunicatorService, private cookieService: CookieService, private router: Router) {}
+  constructor(private communicatorService: CommunicatorService, private cookieService: CookieService, private router: Router) { }
 
   logout() {
     this.cookieService.delete("userToken");
@@ -27,16 +27,32 @@ export class DashboardComponent implements OnInit {
     this.communicatorService.onLoginService().subscribe({
       next: (res) => {
         console.log(res.data);
-        if(res.status == true) {
+        if (res.status == true) {
           this.username = res.data.username;
           this.email = res.data.email;
         } else {
           alert("Error Getting User Data!");
         }
       },
-      error: () => {}
+      error: () => { }
     })
-    
+
+    this.loadExternalScript('assets/libs/bootstrap/js/bootstrap.bundle.min.js');
+    this.loadExternalScript('assets/libs/simplebar/simplebar.min.js');
+    this.loadExternalScript('assets/libs/apexcharts/apexcharts.min.js');
+    this.loadExternalScript('assets/js/pages/ecommerce-index.init.js');
+    this.loadExternalScript('assets/js/app.js');
+  }
+
+  loadExternalScript(src: string) {
+    const script = document.createElement('script');
+    script.src = src;  // Path to your external JS file
+    script.type = 'text/javascript';
+    script.async = true;
+    script.onload = () => {
+      console.log('Theme JS loaded');
+    };
+    document.body.appendChild(script);
   }
 
 }

@@ -1,41 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-startbar="dark" data-bs-theme="light">
 
+
+<!-- Mirrored from mannatthemes.com/rizz/default-dark/ecommerce-index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Apr 2025 09:54:54 GMT -->
+
+<head>
+
+
+    <meta charset="utf-8" />
+    <title>Swissverve | Account Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="Account Management Panel" name="description" />
+    <meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+
+    <!-- App css -->
+    <link href="/public/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/public/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="/public/app.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+
+<!-- Top Bar Start -->
+
+<body>
     <!-- Top Bar Start -->
     <div class="topbar d-print-none">
         <div class="container-xxl">
-            <nav class="topbar-custom d-flex justify-content-between" id="topbar-custom">    
-        
+            <nav class="topbar-custom d-flex justify-content-between" id="topbar-custom">
 
-                <ul class="topbar-item list-unstyled d-inline-flex align-items-center mb-0">                        
+
+                <ul class="topbar-item list-unstyled d-inline-flex align-items-center mb-0">
                     <li>
                         <button class="nav-link mobile-menu-btn nav-icon" id="togglemenu">
                             <i class="iconoir-menu-scale"></i>
                         </button>
-                    </li> 
+                    </li>
                     <li class="mx-3 welcome-text">
                         <h3 class="mb-0 fw-bold text-truncate">Hello, {{ username }}!</h3>
                         <!-- <h6 class="mb-0 fw-normal text-muted text-truncate fs-14">Here's your overview this week.</h6> -->
-                    </li>                   
+                    </li>
                 </ul>
                 <ul class="topbar-item list-unstyled d-inline-flex align-items-center mb-0">
                     <li class="hide-phone app-search">
                         <form role="search" action="#" method="get">
-                            <input type="search" name="search" class="form-control top-search mb-0" placeholder="Search here...">
+                            <input type="search" name="search" class="form-control top-search mb-0"
+                                placeholder="Search here...">
                             <button type="submit"><i class="iconoir-search"></i></button>
                         </form>
-                    </li>    
+                    </li>
                     <li class="topbar-item">
                         <a class="nav-link nav-icon" href="javascript:void(0);" id="light-dark-mode">
                             <i class="iconoir-half-moon dark-mode"></i>
                             <i class="iconoir-sun-light light-mode"></i>
-                        </a>                    
+                        </a>
                     </li>
-    
+
                     <li class="dropdown topbar-item">
-                        <a class="nav-link dropdown-toggle arrow-none nav-icon" data-bs-toggle="dropdown" href="#" role="button"
-                            aria-haspopup="false" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle arrow-none nav-icon" data-bs-toggle="dropdown" href="#"
+                            role="button" aria-haspopup="false" aria-expanded="false" id="dropdownMenuButton">
                             <i class="iconoir-user menu-icon"></i>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-end py-0">
+                        <div class="dropdown-menu dropdown-menu-end py-0" aria-labelledby="dropdownMenuButton">
                             <div class="d-flex align-items-center dropdown-item py-2 bg-secondary-subtle">
                                 <div class="flex-shrink-0">
                                     <i class="iconoir-user menu-icon"></i>
@@ -47,13 +78,18 @@
                             </div>
                             <div class="dropdown-divider mt-0"></div>
                             <small class="text-muted px-2 pb-1 d-block">Account</small>
-                            <a class="dropdown-item" href="pages-profile.html"><i class="las la-user fs-18 me-1 align-text-bottom"></i> Profile</a>
-                            <small class="text-muted px-2 py-1 d-block">Settings</small>                        
-                            <a class="dropdown-item" href="pages-profile.html"><i class="las la-cog fs-18 me-1 align-text-bottom"></i>Account Settings</a>
-                            <a class="dropdown-item" href="pages-profile.html"><i class="las la-lock fs-18 me-1 align-text-bottom"></i> Security</a>
-                            <a class="dropdown-item" href="pages-faq.html"><i class="las la-question-circle fs-18 me-1 align-text-bottom"></i> Help Center</a>                       
+                            <a class="dropdown-item" href="pages-profile.html"><i
+                                    class="las la-user fs-18 me-1 align-text-bottom"></i> Profile</a>
+                            <small class="text-muted px-2 py-1 d-block">Settings</small>
+                            <a class="dropdown-item" href="pages-profile.html"><i
+                                    class="las la-cog fs-18 me-1 align-text-bottom"></i>Account Settings</a>
+                            <a class="dropdown-item" href="pages-profile.html"><i
+                                    class="las la-lock fs-18 me-1 align-text-bottom"></i> Security</a>
+                            <a class="dropdown-item" href="pages-faq.html"><i
+                                    class="las la-question-circle fs-18 me-1 align-text-bottom"></i> Help Center</a>
                             <div class="dropdown-divider mb-0"></div>
-                            <a class="dropdown-item text-danger" (click)="logout()"><i class="las la-power-off fs-18 me-1 align-text-bottom"></i> Logout</a>
+                            <a class="dropdown-item text-danger" (click)="logout()"><i
+                                    class="las la-power-off fs-18 me-1 align-text-bottom"></i> Logout</a>
                         </div>
                     </li>
                 </ul><!--end topbar-nav-->
@@ -70,14 +106,12 @@
                 <span>
                     <i class="iconoir-user-star menu-icon" style="font-size: 30px;"></i>
                 </span>
-                <span class="">
-                    
-                </span>
+                <h6 style="color: #fd7e14;">{{ username }}</h6>
             </a>
         </div>
         <!--end brand-->
         <!--start startbar-menu-->
-        <div class="startbar-menu" >
+        <div class="startbar-menu">
             <div class="startbar-collapse" id="startbarCollapse" data-simplebar>
                 <div class="d-flex align-items-start flex-column w-100">
                     <!-- Navigation -->
@@ -120,7 +154,8 @@
                                         <a class="nav-link" routerLink="internal-transfer">Internal Transfer</a>
                                     </li><!--end nav-item-->
                                     <li class="nav-item">
-                                        <a class="nav-link" routerLink="international-transfer">International Transfer</a>
+                                        <a class="nav-link" routerLink="international-transfer">International
+                                            Transfer</a>
                                     </li><!--end nav-item-->
                                     <li class="nav-item">
                                         <a class="nav-link" routerLink="local-transfer">Local Transfer</a>
@@ -195,11 +230,26 @@
                     </ul><!--end navbar-nav--->
                 </div>
             </div><!--end startbar-collapse-->
-        </div><!--end startbar-menu-->    
+        </div><!--end startbar-menu-->
     </div><!--end startbar-->
     <div class="startbar-overlay d-print-none"></div>
     <!-- end leftbar-tab-menu-->
 
-   <router-outlet />
 
-  
+
+    <router-outlet></router-outlet>
+
+    <!-- Javascript  -->
+    <!-- vendor js -->
+
+    <script src="/public/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/public/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="/public/assets/libs/apexcharts/apexcharts.min.js"></script>
+    <script src="/public/assets/js/pages/ecommerce-index.init.js"></script>
+    <script src="/public/assets/js/app.js"></script>
+</body>
+<!--end body-->
+
+<!-- Mirrored from mannatthemes.com/rizz/default-dark/ecommerce-index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Apr 2025 09:55:00 GMT -->
+
+</html>
