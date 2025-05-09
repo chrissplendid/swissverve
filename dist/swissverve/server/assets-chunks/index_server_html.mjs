@@ -3,50 +3,38 @@ export default `<!doctype html>
 
 <head>
   <meta charset="utf-8"/>
-  <title>Swissverve | Swissverve - Your Trusted Online Banking System</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta content="Premium Multipurpose Admin &amp; Dashboard Template" name="description"/>
-  <meta content="" name="author"/>
+  <title>Swissverve - Your Trusted Online Banking System</title>
+  <base href="/"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta name="keywords" content="mobile banking, business consulting, bank loans, credit cards, finance, insurance, broker business, forex trading">
-  <meta name="description" content="Fibank – is a clean, modern and responsive design that let you to build an exclusive website for mobile banking, business consulting, bank loans, credit cards, finance, insurance, broker business, forex trading.">
-  <title>Fibank - Banking And Finnance HTML5 Template</title>
-  <meta property="og:site_name" content="Fibank">
-  <meta property="og:url" content="">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Fibank - Banking And Finnance HTML5 Template">
-  <meta name="og:image" content="images/assets/ogg.html">
-  <!-- For IE -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- For Resposive Device -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- For Window Tab Color -->
-  <!-- Chrome, Firefox OS and Opera -->
-  <meta name="theme-color" content="#913BFF">
-  <!-- Windows Phone -->
-  <meta name="msapplication-navbutton-color" content="#913BFF">
-  <!-- iOS Safari -->
-  <meta name="apple-mobile-web-app-status-bar-style" content="#913BFF">
+  <meta name="keywords" content="mobile banking, business consulting, bank loans, credit cards, finance, insurance, broker business, forex trading"/>
+  <meta name="description" content="Swissverve"/>
+  <meta name="author" content=""/>
 
-  <!-- App favicon -->
-  <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <!-- Social Meta -->
+  <meta property="og:site_name" content="Swissverve"/>
+  <meta property="og:url" content=""/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Swissverve - Banking and Finance"/>
+  <meta property="og:image" content="images/assets/ogg.html"/>
 
+  <!-- Theme Colors -->
+  <meta name="theme-color" content="#913BFF"/>
+  <meta name="msapplication-navbutton-color" content="#913BFF"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="#913BFF"/>
 
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/images/favicon.ico"/>
 
-  <link rel="stylesheet" href="https://swissverve.com/assets/libs/jsvectormap/css/jsvectormap.min.css">
+  <!-- External Libraries -->
+  <link rel="stylesheet" href="https://swissverve.com/assets/libs/jsvectormap/css/jsvectormap.min.css"/>
 
-  <!-- App css -->
-  <link href="https://swissverve.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-  <link href="https://swissverve.com/assets/css/icons.min.css" rel="stylesheet" type="text/css"/>
-  <link href="https://swissverve.com/assets/css/app.min.css" rel="stylesheet" type="text/css"/>
+  <!-- Core App CSS -->
+  <link href="https://swissverve.com/assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://swissverve.com/assets/css/icons.min.css" rel="stylesheet"/>
+  <link href="https://swissverve.com/assets/css/app.min.css" rel="stylesheet"/>
 
-  <!--  "src/assets/libs/jsvectormap/css/jsvectormap.min.css",
-              "src/assets/css/bootstrap.min.css",
-              "src/assets/css/icons.min.css",
-              "src/assets/css/app.min.css", -->
-
-  <!-- CSS here -->
-  <!-- <link rel="stylesheet" href="assets/assets/css/bootstrap.min.css" /> -->
+  <!-- Theme & Vendor CSS -->
   <link rel="stylesheet" href="https://swissverve.com/assets/assets/css/satoshi.css"/>
   <link rel="stylesheet" href="https://swissverve.com/assets/assets/fonts/bootstrap-icons.css"/>
   <link rel="stylesheet" href="https://swissverve.com/assets/assets/css/animate.min.css"/>
@@ -55,21 +43,14 @@ export default `<!doctype html>
   <link rel="stylesheet" href="https://swissverve.com/assets/assets/css/aos.css"/>
   <link rel="stylesheet" href="https://swissverve.com/assets/assets/css/spacing.css"/>
   <link rel="stylesheet" href="https://swissverve.com/assets/assets/css/main.css"/>
-
-
 <link rel="stylesheet" href="styles-Y6VAXYGL.css"></head>
 
 <body><script type="text/javascript" id="ng-event-dispatch-contract">(()=>{function p(t,n,r,o,e,i,f,m){return{eventType:t,event:n,targetElement:r,eic:o,timeStamp:e,eia:i,eirp:f,eiack:m}}function u(t){let n=[],r=e=>{n.push(e)};return{c:t,q:n,et:[],etc:[],d:r,h:e=>{r(p(e.type,e,e.target,t,Date.now()))}}}function s(t,n,r){for(let o=0;o<n.length;o++){let e=n[o];(r?t.etc:t.et).push(e),t.c.addEventListener(e,t.h,r)}}function c(t,n,r,o,e=window){let i=u(t);e._ejsas||(e._ejsas={}),e._ejsas[n]=i,s(i,r),s(i,o,!0)}window.__jsaction_bootstrap=c;})();
 </script>
   <app-root></app-root>
 
-
-  <!-- Javascript  -->
-  <!-- vendor js -->
-
-  <!--<script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+  <!-- Core JS -->
   <script src="https://swissverve.com/assets/libs/simplebar/simplebar.min.js"></script>
-
   <script src="https://swissverve.com/assets/libs/apexcharts/apexcharts.min.js"></script>
   <script src="https://swissverve.com/assets/data/stock-prices.js"></script>
   <script src="https://swissverve.com/assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
@@ -78,17 +59,7 @@ export default `<!doctype html>
   <script src="https://swissverve.com/assets/js/pages/ecommerce-index.init.js"></script>
   <script src="https://swissverve.com/assets/js/app.js"></script>
 
-  <!-- "src/assets/libs/simplebar/simplebar.min.js",
-              "src/assets/libs/apexcharts/apexcharts.min.js",
-              "src/assets/data/stock-prices.js",
-              "src/assets/libs/jsvectormap/js/jsvectormap.min.js",
-              "src/assets/libs/jsvectormap/maps/world.js",
-              "src/assets/js/pages/index.init.js",
-              "src/assets/js/pages/ecommerce-index.init.js",
-              "src/assets/js/app.js" -->
-
-  <!-- JS here -->
-
+  <!-- Theme/Vendor JS -->
   <script src="https://swissverve.com/assets/assets/js/modernizr-3.5.0.min.js"></script>
   <script src="https://swissverve.com/assets/assets/js/jquery-3.5.1.min.js"></script>
   <script src="https://swissverve.com/assets/assets/js/popper.min.js"></script>
@@ -104,10 +75,8 @@ export default `<!doctype html>
   <script src="https://swissverve.com/assets/assets/js/jquery.waypoints.min.js"></script>
   <script src="https://swissverve.com/assets/assets/js/jquery.easypiechart.min.js"></script>
   <script src="https://swissverve.com/assets/assets/js/jquery-ui.js"></script>
-
-  <!--Custom JS here -->
   <script src="https://swissverve.com/assets/assets/js/main.js"></script>
+<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-CV4GDUE4.js" defer=""></script><script src="main-WF6Y6LZT.js" type="module"></script></body>
 
-<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-CV4GDUE4.js" defer=""></script><script src="main-KZDTXUTX.js" type="module"></script></body>
-
-</html>`;
+</html>
+`;

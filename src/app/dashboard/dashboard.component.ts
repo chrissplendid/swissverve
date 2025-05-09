@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
 
   logout() {
     this.cookieService.delete("userToken");
-    this.router.navigate(["/"]);
+    this.router.navigate(["/login"]);
   }
 
   ngOnInit(): void {
