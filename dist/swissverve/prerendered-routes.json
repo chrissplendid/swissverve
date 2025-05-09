@@ -2,6 +2,7 @@
   "routes": {
     "/": {},
     "/about": {},
+    "/contact": {},
     "/dashboard": {},
     "/dashboard/crypto-transfer": {},
     "/dashboard/deposit": {},
@@ -14,7 +15,9 @@
     "/dashboard/profile": {},
     "/dashboard/stocks": {},
     "/dashboard/transactions": {},
+    "/faq": {},
     "/login": {},
-    "/register": {}
+    "/register": {},
+    "/services": {}
   }
 }

@@ -106,6 +106,6 @@ export default `<!DOCTYPE html><html lang="en" dir="ltr" data-startbar="light" d
   <!--Custom JS here -->
   <script src="https://swissverve.com/assets/assets/js/main.js"></script>
 
-<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-CV4GDUE4.js" defer></script><script src="main-6Q6YBQLC.js" type="module"></script>
+<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-CV4GDUE4.js" defer></script><script src="main-KZDTXUTX.js" type="module"></script>
 
 <script id="ng-state" type="application/json">{"__nghData__":[{},{"c":{"0":[{"i":"c3708398052","r":1}]}}]}</script></body></html>`;
