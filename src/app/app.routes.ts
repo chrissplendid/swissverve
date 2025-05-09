@@ -32,7 +32,7 @@ import { TransactionsComponent } from './transactions/transactions.component';
 import { KycComponent } from './kyc/kyc.component';
 
 export const routes: Routes = [
-  {
+  /*{
     path: '',
     component: NavComponent,
     children: [
@@ -42,8 +42,8 @@ export const routes: Routes = [
       { path: 'faq', component: FaqComponent },
       { path: 'services', component: ServicesComponent }
     ]
-  },
-  { path: 'login', component: LoginComponent },
+  },*/
+  { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   {
     path: 'dashboard',

@@ -1,5 +1,5 @@
 export default `<!doctype html>
-<html lang="en" dir="ltr" data-startbar="light" data-bs-theme="light">
+<html lang="en" dir="ltr" data-startbar="dark" data-bs-theme="light">
 
 <head>
   <meta charset="utf-8"/>
@@ -76,7 +76,7 @@ export default `<!doctype html>
   <script src="https://swissverve.com/assets/assets/js/jquery.easypiechart.min.js"></script>
   <script src="https://swissverve.com/assets/assets/js/jquery-ui.js"></script>
   <script src="https://swissverve.com/assets/assets/js/main.js"></script>
-<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-CV4GDUE4.js" defer=""></script><script src="main-WF6Y6LZT.js" type="module"></script></body>
+<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-CV4GDUE4.js" defer=""></script><script src="main-LVNN3XBE.js" type="module"></script></body>
 
 </html>
 `;

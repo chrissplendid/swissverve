@@ -27,13 +27,16 @@
         </div>
     </div>
 </div> -->
-<header class="theme-main-menu theme-menu-five sticky-top bg-light" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;">
+<header class="theme-main-menu theme-menu-five sticky-top bg-light"
+    style="box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;">
     <div class="container-fluid custom-container">
         <div class="main-header-area">
             <div class="row align-items-center justify-content-between">
                 <div class="col-md-auto col-6">
                     <div class="logo-area">
-                        <a routerLink="/"><div><span style="font-weight: 700;">Swissverve</span></div></a>
+                        <a routerLink="/">
+                            <div><span style="font-weight: 700;">Swissverve</span></div>
+                        </a>
                     </div>
                 </div>
                 <div class="col-md-auto d-flex align-items-center justify-content-end d-lg-inline-block d-none">
@@ -69,8 +72,8 @@
                                 data-bs-target="#loginModal">Register</a>
                         </div>
                         <div class="search-area ms-1 d-none">
-                            <a class="search-input" href="#" data-bs-toggle="offcanvas"
-                                data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+                            <a class="search-input" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
+                                aria-controls="offcanvasTop">
                                 <i class="bi bi-search"></i>
                             </a>
                         </div>
@@ -90,7 +93,52 @@
 </header>
 <!-- header-area end -->
 
-<router-outlet/>
+<!-- slide-bar start -->
+<div class="ht-menu-wrapper">
+    <div class="ht-menu-area">
+        <button class="ht-menu-toggle"><i class="bi bi-x-lg"></i></button>
+        <div class="mobile-logo">
+            <a href="index.html">
+                <img src="assets/img/logo/logo-2.svg" alt="logo">
+            </a>
+        </div>
+        <div class="mobile-menu-wrapper d-lg-none d-inline-block">
+            <div class="mobile-menu"></div>
+        </div>
+        <div class="offset-widget mb-40">
+            <div class="info-widget">
+                <h4 class="offset-title mb-20">About Us</h4>
+                <p class="mb-30">
+
+                </p>
+            </div>
+        </div>
+        <div class="offset-widget mb-30 pr-10">
+            <div class="info-widget info-widget2">
+                <h4 class="offset-title mb-20">Contact Info</h4>
+                <p>
+                    <i class="fal fa-address-book"></i>
+                    Switzerland
+                </p>
+                <p>
+                    <i class="fal fa-phone"></i>
+                    +0989 7876 9865 9
+                </p>
+                <p>
+                    <i class="fal fa-envelope-open"></i>
+                    support&#64;swissverve.com
+                </p>
+            </div>
+        </div>
+        <div class="login-btn text-center">
+            <a class="ht-btn w-100" routerLink="/login">Login</a>
+        </div>
+
+    </div>
+</div>
+<!-- side-bar end -->
+
+<router-outlet></router-outlet>
 
 <!--footer-area start-->
 <footer class="footer-five theme-bg2 mt--115 pt-195">
@@ -99,7 +147,9 @@
             <div class="col-xxl-6 col-xl-6 text-xl-start text-center">
                 <div class="footer-widget">
                     <div class="footer-logo">
-                        <a routerLink="/"><div><span style="font-weight: 700; color: #FFFFFF;">Swissverve</span></div></a>
+                        <a routerLink="/">
+                            <div><span style="font-weight: 700; color: #FFFFFF;">Swissverve</span></div>
+                        </a>
                     </div>
                     <p class="description-text">Choose us for reliable, fast banking services that meets all
                         your
