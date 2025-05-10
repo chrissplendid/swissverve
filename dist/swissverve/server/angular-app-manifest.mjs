@@ -11,6 +11,26 @@ export default {
   },
   {
     "renderMode": 2,
+    "route": "/about"
+  },
+  {
+    "renderMode": 2,
+    "route": "/contact"
+  },
+  {
+    "renderMode": 2,
+    "route": "/faq"
+  },
+  {
+    "renderMode": 2,
+    "route": "/services"
+  },
+  {
+    "renderMode": 2,
+    "route": "/login"
+  },
+  {
+    "renderMode": 2,
     "route": "/register"
   },
   {
@@ -64,22 +84,27 @@ export default {
 ],
   entryPointToBrowserMapping: undefined,
   assets: {
-    'index.csr.html': {size: 4948, hash: 'b5133ec9f4ab8b58e0d96b156e52d01181c497650049497996a3a17a81ead697', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
-    'index.server.html': {size: 5328, hash: '4a8fa4daa8d02211e6d52aae98263730c268550036ff47ed5c6d395cbfb9b5f2', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
-    'register/index.html': {size: 8355, hash: '0228fb5fdb7b7f53441a718246b4cb7f3c0b5bef55d51c5163baa3662584ea7a', text: () => import('./assets-chunks/register_index_html.mjs').then(m => m.default)},
-    'index.html': {size: 8355, hash: '0228fb5fdb7b7f53441a718246b4cb7f3c0b5bef55d51c5163baa3662584ea7a', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
-    'dashboard/internal-transfer/index.html': {size: 8355, hash: '0228fb5fdb7b7f53441a718246b4cb7f3c0b5bef55d51c5163baa3662584ea7a', text: () => import('./assets-chunks/dashboard_internal-transfer_index_html.mjs').then(m => m.default)},
-    'dashboard/deposit/index.html': {size: 8355, hash: '0228fb5fdb7b7f53441a718246b4cb7f3c0b5bef55d51c5163baa3662584ea7a', text: () => import('./assets-chunks/dashboard_deposit_index_html.mjs').then(m => m.default)},
-    'dashboard/kyc/index.html': {size: 8355, hash: '0228fb5fdb7b7f53441a718246b4cb7f3c0b5bef55d51c5163baa3662584ea7a', text: () => import('./assets-chunks/dashboard_kyc_index_html.mjs').then(m => m.default)},
-    'dashboard/international-transfer/index.html': {size: 8355, hash: '0228fb5fdb7b7f53441a718246b4cb7f3c0b5bef55d51c5163baa3662584ea7a', text: () => import('./assets-chunks/dashboard_international-transfer_index_html.mjs').then(m => m.default)},
-    'dashboard/index.html': {size: 8355, hash: '0228fb5fdb7b7f53441a718246b4cb7f3c0b5bef55d51c5163baa3662584ea7a', text: () => import('./assets-chunks/dashboard_index_html.mjs').then(m => m.default)},
-    'dashboard/local-transfer/index.html': {size: 8355, hash: '0228fb5fdb7b7f53441a718246b4cb7f3c0b5bef55d51c5163baa3662584ea7a', text: () => import('./assets-chunks/dashboard_local-transfer_index_html.mjs').then(m => m.default)},
-    'dashboard/loan/index.html': {size: 8355, hash: '0228fb5fdb7b7f53441a718246b4cb7f3c0b5bef55d51c5163baa3662584ea7a', text: () => import('./assets-chunks/dashboard_loan_index_html.mjs').then(m => m.default)},
-    'dashboard/profile/index.html': {size: 8355, hash: '0228fb5fdb7b7f53441a718246b4cb7f3c0b5bef55d51c5163baa3662584ea7a', text: () => import('./assets-chunks/dashboard_profile_index_html.mjs').then(m => m.default)},
-    'dashboard/nft/index.html': {size: 8355, hash: '0228fb5fdb7b7f53441a718246b4cb7f3c0b5bef55d51c5163baa3662584ea7a', text: () => import('./assets-chunks/dashboard_nft_index_html.mjs').then(m => m.default)},
-    'dashboard/stocks/index.html': {size: 8355, hash: '0228fb5fdb7b7f53441a718246b4cb7f3c0b5bef55d51c5163baa3662584ea7a', text: () => import('./assets-chunks/dashboard_stocks_index_html.mjs').then(m => m.default)},
-    'dashboard/transactions/index.html': {size: 8355, hash: '0228fb5fdb7b7f53441a718246b4cb7f3c0b5bef55d51c5163baa3662584ea7a', text: () => import('./assets-chunks/dashboard_transactions_index_html.mjs').then(m => m.default)},
-    'dashboard/crypto-transfer/index.html': {size: 8355, hash: '0228fb5fdb7b7f53441a718246b4cb7f3c0b5bef55d51c5163baa3662584ea7a', text: () => import('./assets-chunks/dashboard_crypto-transfer_index_html.mjs').then(m => m.default)},
+    'index.csr.html': {size: 4815, hash: '2db8a905ee05b2ce4321ed2356e4d706864945b9ba63d1579299ded2e8622055', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
+    'index.server.html': {size: 5195, hash: 'bab63dbf135b9a496d69b1d24b040c911fbfb7d1a7b37fe9e6f67a993231df0a', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
+    'index.html': {size: 32756, hash: 'ad2af5256ece55b55320c563af2c3bfd29263acca4e29913d93d845f2a51c90d', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
+    'services/index.html': {size: 32756, hash: 'ad2af5256ece55b55320c563af2c3bfd29263acca4e29913d93d845f2a51c90d', text: () => import('./assets-chunks/services_index_html.mjs').then(m => m.default)},
+    'about/index.html': {size: 32756, hash: 'ad2af5256ece55b55320c563af2c3bfd29263acca4e29913d93d845f2a51c90d', text: () => import('./assets-chunks/about_index_html.mjs').then(m => m.default)},
+    'contact/index.html': {size: 32756, hash: 'ad2af5256ece55b55320c563af2c3bfd29263acca4e29913d93d845f2a51c90d', text: () => import('./assets-chunks/contact_index_html.mjs').then(m => m.default)},
+    'login/index.html': {size: 32756, hash: 'ad2af5256ece55b55320c563af2c3bfd29263acca4e29913d93d845f2a51c90d', text: () => import('./assets-chunks/login_index_html.mjs').then(m => m.default)},
+    'register/index.html': {size: 32756, hash: 'ad2af5256ece55b55320c563af2c3bfd29263acca4e29913d93d845f2a51c90d', text: () => import('./assets-chunks/register_index_html.mjs').then(m => m.default)},
+    'dashboard/crypto-transfer/index.html': {size: 32756, hash: 'ad2af5256ece55b55320c563af2c3bfd29263acca4e29913d93d845f2a51c90d', text: () => import('./assets-chunks/dashboard_crypto-transfer_index_html.mjs').then(m => m.default)},
+    'dashboard/index.html': {size: 32756, hash: 'ad2af5256ece55b55320c563af2c3bfd29263acca4e29913d93d845f2a51c90d', text: () => import('./assets-chunks/dashboard_index_html.mjs').then(m => m.default)},
+    'dashboard/internal-transfer/index.html': {size: 32756, hash: 'ad2af5256ece55b55320c563af2c3bfd29263acca4e29913d93d845f2a51c90d', text: () => import('./assets-chunks/dashboard_internal-transfer_index_html.mjs').then(m => m.default)},
+    'dashboard/deposit/index.html': {size: 32756, hash: 'ad2af5256ece55b55320c563af2c3bfd29263acca4e29913d93d845f2a51c90d', text: () => import('./assets-chunks/dashboard_deposit_index_html.mjs').then(m => m.default)},
+    'faq/index.html': {size: 32756, hash: 'ad2af5256ece55b55320c563af2c3bfd29263acca4e29913d93d845f2a51c90d', text: () => import('./assets-chunks/faq_index_html.mjs').then(m => m.default)},
+    'dashboard/loan/index.html': {size: 32756, hash: 'ad2af5256ece55b55320c563af2c3bfd29263acca4e29913d93d845f2a51c90d', text: () => import('./assets-chunks/dashboard_loan_index_html.mjs').then(m => m.default)},
+    'dashboard/international-transfer/index.html': {size: 32756, hash: 'ad2af5256ece55b55320c563af2c3bfd29263acca4e29913d93d845f2a51c90d', text: () => import('./assets-chunks/dashboard_international-transfer_index_html.mjs').then(m => m.default)},
+    'dashboard/kyc/index.html': {size: 32756, hash: 'ad2af5256ece55b55320c563af2c3bfd29263acca4e29913d93d845f2a51c90d', text: () => import('./assets-chunks/dashboard_kyc_index_html.mjs').then(m => m.default)},
+    'dashboard/local-transfer/index.html': {size: 32756, hash: 'ad2af5256ece55b55320c563af2c3bfd29263acca4e29913d93d845f2a51c90d', text: () => import('./assets-chunks/dashboard_local-transfer_index_html.mjs').then(m => m.default)},
+    'dashboard/profile/index.html': {size: 32756, hash: 'ad2af5256ece55b55320c563af2c3bfd29263acca4e29913d93d845f2a51c90d', text: () => import('./assets-chunks/dashboard_profile_index_html.mjs').then(m => m.default)},
+    'dashboard/stocks/index.html': {size: 32756, hash: 'ad2af5256ece55b55320c563af2c3bfd29263acca4e29913d93d845f2a51c90d', text: () => import('./assets-chunks/dashboard_stocks_index_html.mjs').then(m => m.default)},
+    'dashboard/nft/index.html': {size: 32756, hash: 'ad2af5256ece55b55320c563af2c3bfd29263acca4e29913d93d845f2a51c90d', text: () => import('./assets-chunks/dashboard_nft_index_html.mjs').then(m => m.default)},
+    'dashboard/transactions/index.html': {size: 32756, hash: 'ad2af5256ece55b55320c563af2c3bfd29263acca4e29913d93d845f2a51c90d', text: () => import('./assets-chunks/dashboard_transactions_index_html.mjs').then(m => m.default)},
     'styles-Y6VAXYGL.css': {size: 294, hash: 'Jfq+rZxxo18', text: () => import('./assets-chunks/styles-Y6VAXYGL_css.mjs').then(m => m.default)}
   },
 };

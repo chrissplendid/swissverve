@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
 
   logout() {
     this.cookieService.delete("userToken");
-    this.router.navigate(["/"]);
+    this.router.navigate(["/login"]);
   }
 
   ngOnInit(): void {
@@ -37,7 +37,7 @@ export class DashboardComponent implements OnInit {
       error: () => { }
     })
 
-    this.loadExternalScript('assets/libs/bootstrap/js/bootstrap.bundle.min.js');
+    //this.loadExternalScript('assets/libs/bootstrap/js/bootstrap.bundle.min.js');
     this.loadExternalScript('assets/libs/simplebar/simplebar.min.js');
     this.loadExternalScript('assets/libs/apexcharts/apexcharts.min.js');
     this.loadExternalScript('assets/js/pages/ecommerce-index.init.js');
