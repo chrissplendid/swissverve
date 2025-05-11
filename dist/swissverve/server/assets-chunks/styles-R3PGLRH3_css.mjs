@@ -1,0 +1,2 @@
+export default `body{font-family:Roboto,sans-serif}.btn{background-color:#fd7e14!important;border:#fd7e14!important}.btn:hover{background-color:#fd7e14!important;border:#fd7e14!important;opacity:.8}.btn-primary{background-color:#fd7e14!important;border:#fd7e14!important}.text-primary{color:#fd7e14!important}.main-menu ul li a:before{display:none}.whatsapp-float{position:fixed;bottom:20px;left:20px;z-index:1000}
+`;

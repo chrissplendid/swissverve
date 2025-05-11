@@ -50,10 +50,10 @@ export class CommunicatorService {
   }
 
   onSubmitLoginService(formInputs: any): Observable<any> {
-    return this.http.post<any>(`${this.BASE_URL}/auth/login`, formInputs);
+    return this.postData<any>(`${this.BASE_URL}/auth/login`, formInputs);
   }
 
   onSubmitRegisterService(formInputs: any): Observable<any> {
-    return this.http.post<any>(`${this.BASE_URL}/auth/register`, formInputs);
+    return this.postData<any>(`${this.BASE_URL}/auth/register`, formInputs);
   }
 }

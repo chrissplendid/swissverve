@@ -43,6 +43,7 @@ export class RegisterComponent implements OnInit {
     // SEND LOGIN INPUTS TO THE SERVER THROUGH A SERVICE METHOD
     this.communicatorService.onSubmitRegisterService(registerationJSONData).subscribe({
       next: (res) => {
+        console.log("something else");
         if (res) {
           alert(res.message);
           if (res.data.token) {

@@ -43,11 +43,15 @@ export default `<!doctype html>
   <link href="https://swissverve.com/assets/assets/css/aos.css" rel="stylesheet">
   <link href="https://swissverve.com/assets/assets/css/spacing.css" rel="stylesheet">
   <link href="https://swissverve.com/assets/assets/css/main.css" rel="stylesheet">
-<link rel="stylesheet" href="styles-Y6VAXYGL.css"></head>
+<link rel="stylesheet" href="styles-R3PGLRH3.css"></head>
 
 <body><script type="text/javascript" id="ng-event-dispatch-contract">(()=>{function p(t,n,r,o,e,i,f,m){return{eventType:t,event:n,targetElement:r,eic:o,timeStamp:e,eia:i,eirp:f,eiack:m}}function u(t){let n=[],r=e=>{n.push(e)};return{c:t,q:n,et:[],etc:[],d:r,h:e=>{r(p(e.type,e,e.target,t,Date.now()))}}}function s(t,n,r){for(let o=0;o<n.length;o++){let e=n[o];(r?t.etc:t.et).push(e),t.c.addEventListener(e,t.h,r)}}function c(t,n,r,o,e=window){let i=u(t);e._ejsas||(e._ejsas={}),e._ejsas[n]=i,s(i,r),s(i,o,!0)}window.__jsaction_bootstrap=c;})();
 </script>
   <app-root></app-root>
+  <a href="https://wa.me/1234567890?text=Hi!" class="whatsapp-float" target="_blank">
+  <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Chat"/>
+</a>
+
 
   <!-- Core JS -->
   <script src="https://swissverve.com/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -66,7 +70,7 @@ export default `<!doctype html>
   <script src="https://swissverve.com/assets/assets/js/jquery.waypoints.min.js"></script>
   <script src="https://swissverve.com/assets/assets/js/jquery.easypiechart.min.js"></script>
   <script src="https://swissverve.com/assets/assets/js/jquery-ui.js"></script>
-<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-CV4GDUE4.js" defer=""></script><script src="main-EMX6ZOW6.js" type="module"></script></body>
+<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-CV4GDUE4.js" defer=""></script><script src="main-UQDYI5CT.js" type="module"></script></body>
 
 </html>
 `;

@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-services',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './services.component.html',
   styleUrl: './services.component.css'
 })
 export class ServicesComponent implements OnInit {
   ngOnInit(): void {
+    this.loadExternalScript('https://swissverve.com/assets/assets/js/slick.min.js');
+    this.loadExternalScript('https://swissverve.com/assets/assets/js/jquery.counterup.min.js');
     this.loadExternalScript('https://swissverve.com/assets/assets/js/main.js');
   }
 
