@@ -3,6 +3,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent {
   token: any;
 
   // A CONSTRUCTOR METHOD THAT RUNS BEFORE THE PAGE INITIALIZES
-  constructor(private communicatorService: CommunicatorService, private cookieService: CookieService, private router: Router) {}
+  constructor(private communicatorService: CommunicatorService, private cookieService: CookieService, private router: Router) { }
 
   // LOGIN METHOD
   login(loginData: NgForm) {
@@ -28,22 +29,27 @@ export class LoginComponent {
     // SEND LOGIN INPUTS TO THE SERVER THROUGH A SERVICE METHOD
     this.communicatorService.onSubmitLoginService(loginJSONData).subscribe({
       next: (res) => {
-        alert(res.message);
-        if (res) {
-          if (res.data.token) {
-            this.cookieService.set("userToken", res.data.token);
-            this.router.navigate(["dashboard"]);
-          } else {
-            alert("Unauthorized!")
-          }
+        console.log('Login response:', res);
+
+        if (res?.message) {
+          Swal.fire('Success', res.message, 'success');
+        }
+
+        const token = res?.data?.token;
+        if (token) {
+          this.cookieService.set('userToken', token);
+          this.router.navigate(['dashboard']);
         } else {
-          alert("Error!");
+          Swal.fire('Unauthorized', 'No token received.', 'error');
         }
       },
-      error: () => {}
+      error: (err) => {
+        console.error('Login error:', err);
+        Swal.fire('Error', err.error.message, 'error');
+      }
     })
 
   }
-    
+
 
 }

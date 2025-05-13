@@ -13,7 +13,7 @@ export class CommunicatorService {
   constructor(
     private http: HttpClient,
     private cookieService: CookieService
-  ) {}
+  ) { }
 
   private getToken(): string {
     return this.cookieService.get('userToken') || '';
@@ -27,15 +27,16 @@ export class CommunicatorService {
     });
   }
 
-  private getData<T>(url: string): Observable<T> {
-    const headers = this.getAuthHeaders();
+  private getData<T>(url: string, skipAuth = false): Observable<T> {
+    const headers = skipAuth ? new HttpHeaders({ 'Content-Type': 'application/json' }) : this.getAuthHeaders();
     return this.http.get<T>(url, { headers });
   }
 
-  private postData<T>(url: string, body: any): Observable<T> {
-    const headers = this.getAuthHeaders();
+  private postData<T>(url: string, body: any, skipAuth = false): Observable<T> {
+    const headers = skipAuth ? new HttpHeaders({ 'Content-Type': 'application/json' }) : this.getAuthHeaders();
     return this.http.post<T>(url, body, { headers });
   }
+
 
   getTransactionsService(): Observable<any> {
     return this.getData<any>(`${this.BASE_URL}/transactions`);
@@ -50,10 +51,10 @@ export class CommunicatorService {
   }
 
   onSubmitLoginService(formInputs: any): Observable<any> {
-    return this.postData<any>(`${this.BASE_URL}/auth/login`, formInputs);
+    return this.postData<any>(`${this.BASE_URL}/auth/login`, formInputs, true);
   }
 
   onSubmitRegisterService(formInputs: any): Observable<any> {
-    return this.postData<any>(`${this.BASE_URL}/auth/register`, formInputs);
+    return this.postData<any>(`${this.BASE_URL}/auth/register`, formInputs, true);
   }
 }

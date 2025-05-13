@@ -5,6 +5,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { RouterModule, Router } from '@angular/router';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-register',
@@ -43,20 +45,24 @@ export class RegisterComponent implements OnInit {
     // SEND LOGIN INPUTS TO THE SERVER THROUGH A SERVICE METHOD
     this.communicatorService.onSubmitRegisterService(registerationJSONData).subscribe({
       next: (res) => {
-        console.log("something else");
-        if (res) {
-          alert(res.message);
-          if (res.data.token) {
-            this.cookieService.set("userToken", res.data.token);
-            this.router.navigate(["dashboard"]);
-          } else {
-            alert("Unauthorized!")
-          }
+        console.log('Register response:', res);
+
+        if (res?.message) {
+          Swal.fire('Success', res.message, 'success');
+        }
+
+        const token = res?.data?.token;
+        if (token) {
+          this.cookieService.set('userToken', token);
+          this.router.navigate(['dashboard']);
         } else {
-          alert("Error!");
+          Swal.fire('Unauthorized', 'No token received.', 'error');
         }
       },
-      error: () => { }
+      error: (err) => {
+        console.error('Registration error:', err);
+        Swal.fire('Error', err.error.message, 'error');
+      }
     })
 
   }
