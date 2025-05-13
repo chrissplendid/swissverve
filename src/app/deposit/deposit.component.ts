@@ -23,7 +23,6 @@ export class DepositComponent {
       amount: depositData.value.amount,
       currency: depositData.value.currency
     }
-    alert("...")
     // SEND LOGIN INPUTS TO THE SERVER THROUGH A SERVICE METHOD
     this.communicatorService.onSubmitDepositService(depositJSONData).subscribe({
       next: (res) => {
