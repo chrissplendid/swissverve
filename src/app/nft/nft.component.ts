@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-nft',
@@ -7,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './nft.component.css'
 })
 export class NftComponent {
+  showAlert() {
+    Swal.fire({
+      title: 'Alert',
+      text: 'Access to this feature is currently unavailable for your account.',
+      icon: 'error',
+      confirmButtonText: 'OK'
+    });
+  }
 
 }
