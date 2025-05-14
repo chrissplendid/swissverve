@@ -99,10 +99,9 @@
 			});
 
 			// Hide Menu On nav link click
-			$(opt.menuListBtn).each(function () {
-				$(this).on("click", function () {
-					menuToggle();
-				});
+			menuListBtn.on("click", function (e) {
+				e.stopPropagation();
+				menuToggle();
 			});
 
 
