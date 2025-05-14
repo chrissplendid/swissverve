@@ -1,3 +1,129 @@
-<div class="container" style="margin-top: 100px;">
-    <p>kyc works!</p>
+<!-- NEW DEPOSIT -->
+<div class="page-wrapper">
+
+    <!-- Page Content-->
+    <div class="page-content">
+        <div class="container-xxl">
+
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="card p-3">
+                        <div class="card-header">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h4 class="card-title">KYC Verification</h4>
+                                </div><!--end col-->
+                            </div> <!--end row-->
+                        </div><!--end card-header-->
+                        <form>
+                            <div class="card-body">
+                                <p class="card-text mb-0"><small class="text-muted"><span
+                                            style="color: red !important;"> * </span> Use a valid government-issued
+                                        photo ID.</small></p>
+                                <p class="card-text mb-0"><small class="text-muted"><span
+                                            style="color: red !important;"> * </span> A residence permit is also a valid
+                                        identity card.</small></p>
+                                <p class="card-text mb-0"><small class="text-muted">Some example of documents we do not
+                                        accept. </small></p>
+                                <ul>
+                                    <li>
+                                        <p class="card-text mb-0"><small class="text-muted"> Birth certificate </small>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="card-text mb-0"><small class="text-muted"> Company ID </small></p>
+                                    </li>
+                                    <li>
+                                        <p class="card-text mb-0"><small class="text-muted"> Credit card </small></p>
+                                    </li>
+                                    <li>
+                                        <p class="card-text mb-0"><small class="text-muted"> International driving
+                                                Permit </small></p>
+                                    </li>
+                                    <li>
+                                        <p class="card-text mb-0"><small class="text-muted"> Student ID </small></p>
+                                    </li>
+                                    <li>
+                                        <p class="card-text mb-0"><small class="text-muted"> Visa (execept for
+                                                student/work visa issued by the U.S and China) </small></p>
+                                    </li>
+                                </ul>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-2 col-form-label">Identity Medium</label>
+                                            <div class="col-sm-10">
+                                                <select name="id_medium" class="form-select"
+                                                    aria-label="Default select example" ngModel required>
+                                                    <option value="drivers_licence" selected>Driver's Licence</option>
+                                                    <option value="international_passport" selected>International
+                                                        Passport</option>
+                                                    <option value="national_id_card" selected>National ID Card</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div><!--end col-->
+
+                                    <div class="col-lg-12">
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input" class="col-sm-2 col-form-label">Identity
+                                                Number</label>
+                                            <div class="col-sm-10">
+                                                <input name="id_number" class="form-control" type="text"
+                                                    placeholder="Identity Number" id="example-text-input" ngModel
+                                                    required>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+
+                                    <!--Upload Image-->
+                                    <div class="col-lg-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <div class="row align-items-center">
+                                                    <div class="col">
+                                                        <h4 class="card-title">Identity Card Photo</h4>
+                                                    </div><!--end col-->
+                                                </div> <!--end row-->
+                                            </div><!--end card-header-->
+                                            <div class="card-body pt-0">
+                                                <label for="formFileLg" class="form-label">Upload ID Document</label>
+                                                <input class="form-control form-control-lg" id="formFileLg" type="file">
+                                            </div><!--end card-body-->
+                                        </div><!--end card-->
+                                    </div>
+
+                                </div> <!--end row-->
+                            </div><!--end card-body-->
+                            <div class="p-3">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form><!--end of form-->
+                    </div><!--end card-->
+                </div> <!--end col-->
+            </div><!--end row-->
+        </div><!-- container -->
+        <!--Start Footer-->
+
+        <footer class="footer text-center text-sm-start d-print-none">
+            <div class="container-xxl">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card mb-0 rounded-bottom-0">
+                            <div class="card-body">
+                                <p class="text-muted mb-0">
+                                    © Swissverve
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!--end footer-->
+    </div>
+    <!-- end page content -->
 </div>
+<!-- end page-wrapper -->

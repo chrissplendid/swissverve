@@ -9,94 +9,120 @@
                         <div class="card-body border-dashed-bottom pb-3">
                             <div class="row d-flex justify-content-between">
                                 <div class="col-auto">
-                                    <div class="d-flex justify-content-center align-items-center thumb-xl border border-secondary rounded-circle">
+                                    <div
+                                        class="d-flex justify-content-center align-items-center thumb-xl border border-secondary rounded-circle">
                                         <i class="iconoir-transition-down h1 align-self-center mb-0 text-secondary"></i>
-                                    </div> 
+                                    </div>
                                     <h5 class="mt-2 mb-0 fs-14">My Balance</h5>
                                 </div><!--end col-->
                                 <div class="col align-self-center ">
-                                    <div id="line-2" class="apex-charts float-end"></div> 
+                                    <div id="line-2" class="apex-charts float-end"></div>
                                 </div><!--end col-->
                             </div><!--end row-->
                         </div><!--end card-body-->
-                        <div class="card-body"> 
+                        <div class="card-body">
                             <div class="row d-flex justify-content-center ">
                                 <div class="col-12 col-md-6">
-                                                                 
+
                                 </div><!--end col-->
                                 <div class="col-12 col-md-6 align-self-center text-start text-md-end">
                                     <h2 class="fs-22 mt-0 mb-1 fw-bold">${{ balance }}</h2>
                                 </div><!--end col-->
-                            </div><!--end row-->  
-                        </div><!--end card-body--> 
+                            </div><!--end row-->
+                        </div><!--end card-body-->
                     </div><!--end card-->
-                </div><!--end col-->    
+                </div><!--end col-->
                 <div class="col-md-12 col-lg-6 col-xl-4">
                     <div class="card" style="min-height: 255px;">
                         <div class="card-body border-dashed-bottom pb-3">
                             <div class="row d-flex justify-content-between">
                                 <div class="col-auto">
-                                    <div class="d-flex justify-content-center align-items-center thumb-xl border border-secondary rounded-circle">
+                                    <div
+                                        class="d-flex justify-content-center align-items-center thumb-xl border border-secondary rounded-circle">
                                         <i class="iconoir-transition-down h1 align-self-center mb-0 text-secondary"></i>
-                                    </div> 
+                                    </div>
                                     <h5 class="mt-2 mb-0 fs-14">Income</h5>
                                 </div><!--end col-->
                                 <div class="col align-self-center ">
-                                    <div id="line-2" class="apex-charts float-end"></div> 
+                                    <div id="line-2" class="apex-charts float-end"></div>
                                 </div><!--end col-->
                             </div><!--end row-->
                         </div><!--end card-body-->
-                        <div class="card-body"> 
+                        <div class="card-body">
                             <div class="row d-flex justify-content-center ">
                                 <div class="col-12 col-md-6">
-                                                                 
+
                                 </div><!--end col-->
                                 <div class="col-12 col-md-6 align-self-center text-start text-md-end">
                                     <h2 class="fs-22 mt-0 mb-1 fw-bold">$0.00</h2>
                                 </div><!--end col-->
-                            </div><!--end row-->  
-                        </div><!--end card-body--> 
+                            </div><!--end row-->
+                        </div><!--end card-body-->
                     </div><!--end card-->
-                </div><!--end col-->    
+                </div><!--end col-->
                 <div class="col-md-12 col-lg-6 col-xl-4">
                     <div class="card" style="min-height: 255px;">
                         <div class="card-body border-dashed-bottom pb-3">
                             <div class="row d-flex justify-content-between">
                                 <div class="col-auto">
-                                    <div class="d-flex justify-content-center align-items-center thumb-xl border border-secondary rounded-circle">
+                                    <div
+                                        class="d-flex justify-content-center align-items-center thumb-xl border border-secondary rounded-circle">
                                         <i class="iconoir-transition-up h1 align-self-center mb-0 text-secondary"></i>
-                                    </div> 
+                                    </div>
                                     <h5 class="mt-2 mb-0 fs-14">Expenses</h5>
                                 </div><!--end col-->
                                 <div class="col align-self-center ">
-                                    <div id="line-2" class="apex-charts float-end"></div> 
+                                    <div id="line-2" class="apex-charts float-end"></div>
                                 </div><!--end col-->
                             </div><!--end row-->
                         </div><!--end card-body-->
-                        <div class="card-body"> 
+                        <div class="card-body">
                             <div class="row d-flex justify-content-center ">
-                                <div class="col-12 col-md-6">                                   
+                                <div class="col-12 col-md-6">
                                 </div><!--end col-->
                                 <div class="col-12 col-md-6 align-self-center text-start text-md-end">
                                     <h2 class="fs-22 mt-0 mb-1 fw-bold">$0.00</h2>
                                 </div><!--end col-->
-                            </div><!--end row-->  
-                        </div><!--end card-body--> 
+                            </div><!--end row-->
+                        </div><!--end card-body-->
                     </div><!--end card-->
-                </div><!--end col-->    
+                </div><!--end col-->
             </div><!--end row-->
+
+            <!--Account Details-->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Account Name</h5>
+                            <p class="card-text mb-0">{{accountName}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Account Number</h5>
+                            <p class="card-text mb-0">{{accountNumber}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row justify-content-center">
                 <div class="col-md-12 col-lg-12">
                     <div class="card">
                         <div class="card-header">
                             <div class="row align-items-center">
-                                <div class="col">                      
-                                    <h4 class="card-title">Latest Transactions</h4>                      
+                                <div class="col">
+                                    <h4 class="card-title">Latest Transactions</h4>
                                 </div><!--end col-->
-                                <div class="col-auto"> 
+                                <div class="col-auto">
                                     <div class="dropdown">
-                                        <a href="#" class="btn bt btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="icofont-calendar fs-5 me-1"></i> This Year<i class="las la-angle-down ms-1"></i>
+                                        <a href="#" class="btn bt btn-light dropdown-toggle" data-bs-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            <i class="icofont-calendar fs-5 me-1"></i> This Year<i
+                                                class="las la-angle-down ms-1"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
                                             <a class="dropdown-item" href="#">Today</a>
@@ -104,9 +130,9 @@
                                             <a class="dropdown-item" href="#">Last Month</a>
                                             <a class="dropdown-item" href="#">This Year</a>
                                         </div>
-                                    </div>               
+                                    </div>
                                 </div><!--end col-->
-                            </div>  <!--end row-->                                  
+                            </div> <!--end row-->
                         </div><!--end card-header-->
                         <div class="card-body pt-0">
                             <div class="table-responsive">
@@ -124,29 +150,31 @@
                                         </tr><!--end tr-->
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let transaction of transactions">                                                        
+                                        <tr *ngFor="let transaction of transactions">
                                             <td>#</td>
                                             <td>{{ transaction.reference }}</td>
                                             <td>{{ transaction.type }}</td>
                                             <td>{{ transaction.created_at}}</td>
                                             <td>${{ transaction.amount }}</td>
                                             <td>${{ transaction.fee }}</td>
-                                            <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; display: inline-block; vertical-align: top;">{{ transaction.narration }}</td>
+                                            <td
+                                                style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; display: inline-block; vertical-align: top;">
+                                                {{ transaction.narration }}</td>
                                             <td>{{ transaction.status}}</td>
-                                        </tr><!--end tr-->                        
+                                        </tr><!--end tr-->
                                     </tbody>
-                                </table> <!--end table-->                                               
+                                </table> <!--end table-->
                             </div><!--end /div-->
-                        </div><!--end card-body--> 
-                    </div><!--end card--> 
+                        </div><!--end card-body-->
+                    </div><!--end card-->
                 </div> <!--end col-->
 
             </div><!--end row-->
-            
+
         </div><!-- container -->
-        
+
         <!--Start Footer-->
-        
+
         <footer class="footer text-center text-sm-start d-print-none">
             <div class="container-xxl">
                 <div class="row">
@@ -162,7 +190,7 @@
                 </div>
             </div>
         </footer>
-        
+
         <!--end footer-->
     </div>
     <!-- end page content -->

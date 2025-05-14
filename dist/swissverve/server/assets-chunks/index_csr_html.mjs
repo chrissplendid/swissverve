@@ -43,7 +43,7 @@ export default `<!doctype html>
   <link href="https://swissverve.com/assets/assets/css/aos.css" rel="stylesheet">
   <link href="https://swissverve.com/assets/assets/css/spacing.css" rel="stylesheet">
   <link href="https://swissverve.com/assets/assets/css/main.css" rel="stylesheet">
-<style>body{font-family:Roboto,sans-serif}.whatsapp-float{position:fixed;bottom:20px;left:20px;z-index:1000}</style><link rel="stylesheet" href="styles-R3PGLRH3.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-R3PGLRH3.css"></noscript></head>
+<style>body{font-family:Roboto,sans-serif}.whatsapp-float{position:fixed;bottom:20px;left:20px;z-index:1000}</style><link rel="stylesheet" href="styles-4NG44GVH.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-4NG44GVH.css"></noscript></head>
 
 <body ngcm="">
   <app-root></app-root>
@@ -54,6 +54,8 @@ export default `<!doctype html>
 
   <!-- Core JS -->
   <script src="https://swissverve.com/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://swissverve.com/assets/libs/uppy/uppy.legacy.min.js"></script>
+  <script src="https://swissverve.com/assets/js/pages/file-upload.init.js"></script>
 
   <!-- Theme & Vendor JS -->
   <script src="https://swissverve.com/assets/assets/js/modernizr-3.5.0.min.js"></script>
@@ -69,7 +71,7 @@ export default `<!doctype html>
   <script src="https://swissverve.com/assets/assets/js/jquery.waypoints.min.js"></script>
   <script src="https://swissverve.com/assets/assets/js/jquery.easypiechart.min.js"></script>
   <script src="https://swissverve.com/assets/assets/js/jquery-ui.js"></script>
-<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-CV4GDUE4.js" defer=""></script><script src="main-7OTFMRUX.js" type="module"></script></body>
+<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-CV4GDUE4.js" defer=""></script><script src="main-OE5XLF53.js" type="module"></script></body>
 
 </html>
 `;

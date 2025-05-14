@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './profile.component.css'
 })
 export class ProfileComponent implements OnInit {
+  accountNumber: any;
+  accountName: any;
   accountType: any;
   balance: any;
   country: any;
@@ -23,10 +25,24 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     /* GET LOGGED IN USER DATA FROM THE SERVER THROUGH A SERVICE METHOD */
-    this.communicatorService.onLoginService().subscribe({
+    this.communicatorService.data$.subscribe(data => {
+      console.log(data);
+      this.accountName = data.user.profile.first_name + " " + data.user.profile.last_name;
+      this.accountNumber = data.user.wallet.account_number;
+      this.accountType = data.user.wallet.account_type;
+      this.balance = data.user.wallet.balance;
+      this.country = data.user.profile.country;
+      this.currency = data.user.wallet.currency;
+      this.email = data.user.email;
+      this.username = data.user.username;
+    });
+
+    /* GET LOGGED IN USER DATA FROM THE SERVER THROUGH A SERVICE METHOD */
+    /*this.communicatorService.onLoginService().subscribe({
       next: (res) => {
         console.log(res.data);
         if (res.status == true) {
+          this.accountNumber = res.data.wallet.account_number;
           this.accountType = res.data.wallet.account_type;
           this.balance = res.data.wallet.balance;
           this.country = res.data.profile.country
@@ -42,7 +58,7 @@ export class ProfileComponent implements OnInit {
         }
       },
       error: () => { }
-    })
+    })*/
 
   }
 

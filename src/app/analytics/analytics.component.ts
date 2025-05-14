@@ -9,6 +9,8 @@ import { Component, OnInit  } from '@angular/core';
   styleUrl: './analytics.component.css'
 })
 export class AnalyticsComponent implements OnInit {
+  accountName: any;
+  accountNumber: any;
   balance: any;
   transactions: any;
 
@@ -17,7 +19,13 @@ export class AnalyticsComponent implements OnInit {
 
   ngOnInit(): void {
     /* GET LOGGED IN USER DATA FROM THE SERVER THROUGH A SERVICE METHOD */
-    this.communicatorService.onLoginService().subscribe({
+    this.communicatorService.data$.subscribe(data => {
+      console.log(data);
+      this.accountName = data.user.profile.first_name + " " + data.user.profile.last_name;
+      this.accountNumber = data.user.wallet.account_number;
+      this.balance = data.user.wallet.balance;
+    });
+    /*this.communicatorService.onLoginService().subscribe({
       next: (res) => {
         console.log(res.data);
         if(res.status == true) {
@@ -27,7 +35,7 @@ export class AnalyticsComponent implements OnInit {
         }
       },
       error: () => {}
-    })
+    })*/
 
     /* GET TRANSACTIONS DATA */
     this.communicatorService.getTransactionsService().subscribe({

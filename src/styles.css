@@ -21,6 +21,16 @@ body {
     border: #fd7e14 !important;
 }
 
+.btn-approve {
+    background-color: #22c55e !important;
+    border: #22c55e !important;
+}
+
+.btn-decline {
+    background-color: #ef4d56 !important;
+    border: #ef4d56 !important;
+}
+
 .text-primary {
     color: #fd7e14 !important;
 }

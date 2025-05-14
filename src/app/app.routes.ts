@@ -17,6 +17,7 @@ import { RegisterComponent } from './register/register.component';
 import { ServicesComponent } from './services/services.component';
 
 // Dashboard and Protected Components
+import { AccountsettingsComponent } from './accountsettings/accountsettings.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { CryptotransferComponent } from './cryptotransfer/cryptotransfer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -51,6 +52,7 @@ export const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: '', component: AnalyticsComponent },
+      { path: 'account-settings', component: AccountsettingsComponent },
       { path: 'crypto-transfer', component: CryptotransferComponent },
       { path: 'deposit', component: DepositComponent },
       { path: 'internal-transfer', component: InternaltransferComponent },

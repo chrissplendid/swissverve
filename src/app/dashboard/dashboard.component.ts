@@ -28,6 +28,7 @@ export class DashboardComponent implements OnInit {
       next: (res) => {
         console.log(res.data);
         if (res.status == true) {
+          this.communicatorService.setData({ user: res.data });
           this.username = res.data.username;
           this.email = res.data.email;
         } else {

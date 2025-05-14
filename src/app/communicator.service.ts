@@ -1,12 +1,18 @@
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommunicatorService {
+  private data = new BehaviorSubject<any>(null);
+  data$ = this.data.asObservable();
+
+  setData(value: any) {
+    this.data.next(value);
+  }
 
   private readonly BASE_URL = 'https://api.swissverve.com/api';
 
