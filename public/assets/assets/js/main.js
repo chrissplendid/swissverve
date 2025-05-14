@@ -28,7 +28,6 @@
 				meanMenuContainer: '.mobile-menu',
 				meanScreenWidth: "991",
 				menuToggleBtn: ".ht-menu-toggle",
-				menuListBtn: ".ht-menu-nav",
 				bodyToggleClass: "ht-body-visible",
 				subMenuClass: "ht-submenu",
 				subMenuParent: "ht-item-has-children",
@@ -97,13 +96,6 @@
 					menuToggle();
 				});
 			});
-
-			// Hide Menu On nav link click
-			menuListBtn.on("click", function (e) {
-				e.stopPropagation();
-				menuToggle();
-			});
-
 
 			// Hide Menu On out side click
 			menu.on("click", function (e) {
