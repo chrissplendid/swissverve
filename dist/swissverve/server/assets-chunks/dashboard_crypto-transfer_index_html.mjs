@@ -68,7 +68,7 @@ export default `<!DOCTYPE html><html lang="en" dir="ltr" data-startbar="dark" da
   <script src="https://swissverve.com/assets/assets/js/jquery.waypoints.min.js"></script>
   <script src="https://swissverve.com/assets/assets/js/jquery.easypiechart.min.js"></script>
   <script src="https://swissverve.com/assets/assets/js/jquery-ui.js"></script>
-<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-CV4GDUE4.js" defer></script><script src="main-Q2EJFHNU.js" type="module"></script>
+<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-CV4GDUE4.js" defer></script><script src="main-3HIW4WQ4.js" type="module"></script>
 
 
 <script id="ng-state" type="application/json">{"__nghData__":[{},{"c":{"90":[{"i":"c2325206810","r":1}]}},{"c":{"0":[{"i":"c2128502842","r":1}]}}]}</script></body></html>`;
