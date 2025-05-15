@@ -26,7 +26,7 @@ export default `<!doctype html>
   <meta name="apple-mobile-web-app-status-bar-style" content="#913BFF">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <link rel="shortcut icon" href="LOGO.png">
 
   <!-- Core & Vendor CSS -->
   <link href="https://swissverve.com/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -70,7 +70,7 @@ export default `<!doctype html>
   <script src="https://swissverve.com/assets/assets/js/jquery.waypoints.min.js"></script>
   <script src="https://swissverve.com/assets/assets/js/jquery.easypiechart.min.js"></script>
   <script src="https://swissverve.com/assets/assets/js/jquery-ui.js"></script>
-<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-CV4GDUE4.js" defer=""></script><script src="main-3CNS5TXU.js" type="module"></script></body>
+<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-CV4GDUE4.js" defer=""></script><script src="main-Q2EJFHNU.js" type="module"></script></body>
 
 </html>
 `;

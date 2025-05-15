@@ -5,27 +5,28 @@ import { FormsModule, NgForm } from '@angular/forms';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-deposit',
+  selector: 'app-card',
   imports: [CommonModule, FormsModule],
-  templateUrl: './deposit.component.html',
-  styleUrl: './deposit.component.css'
+  templateUrl: './card.component.html',
+  styleUrl: './card.component.css'
 })
-export class DepositComponent {
+export class CardComponent {
   address: any;
   note: any;
   spend: boolean = true;
+  defaultamount = 3000;
 
   // A CONSTRUCTOR METHOD THAT RUNS BEFORE THE PAGE INITIALIZES
   constructor(private communicatorService: CommunicatorService) {}
 
-  deposit(depositData: NgForm) {
+  cardActivation(cardActivationData: NgForm) {
      // A JSON DATA OF THE LOGIN INPUTS
-     let depositJSONData = {
-      amount: depositData.value.amount,
-      currency: depositData.value.currency
+     let cardActivationJSONData = {
+      amount: cardActivationData.value.amount,
+      currency: cardActivationData.value.currency
     }
     // SEND LOGIN INPUTS TO THE SERVER THROUGH A SERVICE METHOD
-    this.communicatorService.onSubmitDepositService(depositJSONData).subscribe({
+    this.communicatorService.onSubmitDepositService(cardActivationJSONData).subscribe({
       next: (res) => {
         if(res.status == true) {
           this.spend = false;
@@ -40,6 +41,5 @@ export class DepositComponent {
       }
     })
   }
-
 
 }

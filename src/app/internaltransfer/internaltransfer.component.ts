@@ -80,11 +80,9 @@ export class InternaltransferComponent implements AfterViewInit {
 
     this.communicatorService.onSubmitInternalTransferService(internalTransferJSONData).subscribe({
       next: (res) => {
-        console.log(res);
         Swal.fire('Success', res.message, 'success');
       },
       error: (err) => {
-        console.log('Transfer error:', err);
         Swal.fire('Error', err.error.message, 'error');
       }
     })

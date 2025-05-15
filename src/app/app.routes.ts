@@ -19,6 +19,7 @@ import { ServicesComponent } from './services/services.component';
 // Dashboard and Protected Components
 import { AccountsettingsComponent } from './accountsettings/accountsettings.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
+import { CardComponent } from './card/card.component';
 import { CryptotransferComponent } from './cryptotransfer/cryptotransfer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DepositComponent } from './deposit/deposit.component';
@@ -53,6 +54,7 @@ export const routes: Routes = [
     children: [
       { path: '', component: AnalyticsComponent },
       { path: 'account-settings', component: AccountsettingsComponent },
+      { path: 'card', component: CardComponent },
       { path: 'crypto-transfer', component: CryptotransferComponent },
       { path: 'deposit', component: DepositComponent },
       { path: 'internal-transfer', component: InternaltransferComponent },

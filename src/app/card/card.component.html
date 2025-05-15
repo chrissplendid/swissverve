@@ -1,0 +1,83 @@
+<!-- NEW DEPOSIT -->
+<div class="page-wrapper">
+
+    <!-- Page Content-->
+    <div class="page-content">
+        <div class="container-xxl">
+            
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row align-items-center">
+                                <div class="col">                      
+                                    <h4 class="card-title">Card Activation</h4>                      
+                                </div><!--end col-->
+                            </div>  <!--end row-->                                  
+                        </div><!--end card-header-->
+                        <form (ngSubmit)="cardActivation(cardActivationData)" #cardActivationData="ngForm">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-12">    
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-2 col-form-label">Payment System</label>
+                                            <div class="col-sm-10">
+                                                <select name="currency" class="form-select" aria-label="Default select example" ngModel required>
+                                                    <option value="USDTERC20" selected>Crypto Transfer</option>
+                                                  </select>
+                                            </div>
+                                        </div>                                  
+                                      
+                                    </div><!--end col-->
+
+                                    <div class="col-lg-12">
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input" class="col-sm-2 col-form-label">Amount</label>
+                                            <div class="col-sm-10">
+                                                <input name="amount" class="form-control" type="text" placeholder="Amount" id="example-text-input" ngModel required>
+                                            </div>
+                                        </div>                              
+                                    </div><!--end col-->
+
+                                </div> <!--end row-->              
+                            </div><!--end card-body--> 
+                            <div class="p-3" *ngIf="spend; else howToSpend">
+                                <button type="submit" class="btn btn-primary">Send</button>
+                            </div>
+                        </form><!--end of form-->
+                        <ng-template #howToSpend>
+                            <h6>Master Card Activation</h6>
+                            <small>Thank you for choosing Swissverve, to activate your MasterCard. We're excited to assist you in unlocking the full potential of your card.</small>
+                            <p style="text-align: center;">{{ note }} <span style="color: #fd7e14;">{{ address }}</span></p>
+                          </ng-template>
+                    </div><!--end card--> 
+                </div> <!--end col-->                                                       
+            </div><!--end row-->
+
+            <div style="display: block; margin: 0 auto;" class="p-3">
+                <img src="card.png" alt="card" class="img-fluid">
+            </div>
+        </div><!-- container -->
+        <!--Start Footer-->
+        
+        <footer class="footer text-center text-sm-start d-print-none">
+            <div class="container-xxl">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card mb-0 rounded-bottom-0">
+                            <div class="card-body">
+                                <p class="text-muted mb-0">
+                                    © Swissverve
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <!--end footer-->
+    </div>
+    <!-- end page content -->
+</div>
+<!-- end page-wrapper -->

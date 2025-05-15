@@ -5,6 +5,7 @@
     "/contact": {},
     "/dashboard": {},
     "/dashboard/account-settings": {},
+    "/dashboard/card": {},
     "/dashboard/crypto-transfer": {},
     "/dashboard/deposit": {},
     "/dashboard/internal-transfer": {},
