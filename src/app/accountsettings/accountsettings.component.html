@@ -18,19 +18,21 @@
                             <div class="row g-4">
                                 <div class="col-lg-6">
                                     <div class="mb-3 row">
-                                        <label for="example-text-input"
-                                            class="col-sm-2 col-form-label text-start">First Name</label>
+                                        <label for="example-text-input" class="col-sm-2 col-form-label text-start">First
+                                            Name</label>
                                         <div class="col-sm-10">
-                                            <input disabled class="form-control" style="background-color: var(--bs-startbar-bg); color: #fd7e14;" type="text" value=""
-                                                id="example-text-input">
+                                            <input disabled class="form-control"
+                                                style="background-color: var(--bs-startbar-bg); color: #fd7e14;"
+                                                type="text" value="{{ firstname }}" id="example-text-input">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label for="example-text-input"
-                                            class="col-sm-2 col-form-label text-start">Last Name</label>
+                                        <label for="example-text-input" class="col-sm-2 col-form-label text-start">Last
+                                            Name</label>
                                         <div class="col-sm-10">
-                                            <input class="form-control" disabled style="background-color: var(--bs-startbar-bg); color: #fd7e14;" type="text" value=""
-                                                id="example-text-input">
+                                            <input class="form-control" disabled
+                                                style="background-color: var(--bs-startbar-bg); color: #fd7e14;"
+                                                type="text" value="{{ lastname }}" id="example-text-input">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -38,7 +40,7 @@
                                         <div class="col-sm-10">
                                             <select class="form-select" aria-label="Default select example">
                                                 <option disabled selected>- select country -*</option>
-                                                <option value=""></option>
+                                                <option value="{{ country }}">{{ country }}</option>
                                             </select>
                                         </div>
                                     </div>
@@ -46,8 +48,7 @@
                                         <label for="example-tel-input"
                                             class="col-sm-2 col-form-label text-start">Phone</label>
                                         <div class="col-sm-10">
-                                            <input class="form-control" type="tel" value=""
-                                                id="example-tel-input">
+                                            <input class="form-control" type="tel" value="" id="example-tel-input">
                                         </div>
                                     </div>
                                 </div><!--end col-->
@@ -58,16 +59,14 @@
                                         <label for="example-email-input"
                                             class="col-sm-2 col-form-label text-start">Email</label>
                                         <div class="col-sm-10">
-                                            <input class="form-control" type="email" value=""
-                                                id="example-email-input">
+                                            <input class="form-control" type="email" value="{{ email }}" id="example-email-input">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label for="example-text-input"
                                             class="col-sm-2 col-form-label text-start">Username</label>
                                         <div class="col-sm-10">
-                                            <input class="form-control" type="url" value=""
-                                                id="example-text-input">
+                                            <input class="form-control" type="text" value="{{ username }}" id="example-text-input">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -89,7 +88,7 @@
             </div><!--end row-->
 
             <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-6">
+                <div class="col-md-12 col-lg-12">
                     <div class="card p-2">
                         <div class="card-header">
                             <div class="row align-items-center">
@@ -115,7 +114,7 @@
                         </div><!--end card-body-->
                     </div><!--end card-->
                 </div> <!--end col-->
-                <div class="col-md-6 col-lg-6">
+                <div class="col-md-12 col-lg-12">
                     <div class="card p-2">
                         <div class="card-header">
                             <div class="row align-items-center">
@@ -125,52 +124,49 @@
                             </div> <!--end row-->
                         </div><!--end card-header-->
                         <div class="card-body pt-0">
-                            <form>
-                                <div class="mb-3 row">
-                                    <label for="horizontalInput2" class="col-sm-2 col-form-label">Transfer Pin</label>
-                                    <div class="col-sm-10">
-                                        <input type="password" class="form-control" id="horizontalInput2"
-                                            placeholder="Password">
-                                    </div>
+                            <form (ngSubmit)="onResetTransferPin(transferPinData)" #transferPinData="ngForm">
+                                <div class="mb-3" *ngIf="pinisset">
+                                    <label for="horizontalInput2" class="form-label">Current Pin</label>
+                                    <input type="password" name="currentPin" class="form-control" id="horizontalInput2"
+                                        placeholder="Current Pin">
                                 </div>
-                                <div class="mb-3 row">
-                                    <label for="horizontalInput2" class="col-sm-2 col-form-label">Repeat Pin</label>
-                                    <div class="col-sm-10">
-                                        <input type="password" class="form-control" id="horizontalInput2"
-                                            placeholder="Password">
-                                    </div>
+                                <div class="mb-3">
+                                    <label for="horizontalInput2" class="form-label">Transfer Pin</label>
+                                    <input type="password" name="transferPin" class="form-control" id="horizontalInput2"
+                                        placeholder="Transfer Pin" ngModel required>
                                 </div>
-                                <div class="row">
-                                    <div class="col-sm-10 ms-auto">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                    </div>
+                                <div class="mb-3">
+                                    <label for="horizontalInput2" class="form-label">Confirm Pin</label>
+                                    <input type="password" name="confirmTransferPin" class="form-control" id="horizontalInput2"
+                                        placeholder="Confirm Pin" ngModel required>
                                 </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                         </div><!--end card-body-->
                     </div><!--end card-->
                 </div> <!--end col-->
             </div><!--end row-->
 
-        <!--Start Footer-->
+            <!--Start Footer-->
 
-        <footer class="footer text-center text-sm-start d-print-none">
-            <div class="container-xxl">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card mb-0 rounded-bottom-0">
-                            <div class="card-body">
-                                <p class="text-muted mb-0">
-                                    © Swissverve
-                                </p>
+            <footer class="footer text-center text-sm-start d-print-none">
+                <div class="container-xxl">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card mb-0 rounded-bottom-0">
+                                <div class="card-body">
+                                    <p class="text-muted mb-0">
+                                        © Swissverve
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </footer>
 
-        <!--end footer-->
+            <!--end footer-->
+        </div>
+        <!-- end page content -->
     </div>
-    <!-- end page content -->
-</div>
-<!-- end page-wrapper -->
+    <!-- end page-wrapper -->

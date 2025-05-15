@@ -15,7 +15,7 @@
                                 </div><!--end col-->
                             </div> <!--end row-->
                         </div><!--end card-header-->
-                        <form>
+                        <form (ngSubmit)="kyc()" #kycData="ngForm">
                             <div class="card-body">
                                 <p class="card-text mb-0"><small class="text-muted"><span
                                             style="color: red !important;"> * </span> Use a valid government-issued
@@ -53,12 +53,12 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-2 col-form-label">Identity Medium</label>
                                             <div class="col-sm-10">
-                                                <select name="id_medium" class="form-select"
+                                                <select name="id_medium" [(ngModel)]="formData.id_medium" class="form-select"
                                                     aria-label="Default select example" ngModel required>
-                                                    <option value="drivers_licence" selected>Driver's Licence</option>
-                                                    <option value="international_passport" selected>International
+                                                    <option value="driver_licence" selected>Driver's Licence</option>
+                                                    <option value="passport" selected>International
                                                         Passport</option>
-                                                    <option value="national_id_card" selected>National ID Card</option>
+                                                    <option value="national_id" selected>National ID Card</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -70,7 +70,7 @@
                                             <label for="example-text-input" class="col-sm-2 col-form-label">Identity
                                                 Number</label>
                                             <div class="col-sm-10">
-                                                <input name="id_number" class="form-control" type="text"
+                                                <input name="id_number" [(ngModel)]="formData.id_number" class="form-control" type="text"
                                                     placeholder="Identity Number" id="example-text-input" ngModel
                                                     required>
                                             </div>
@@ -89,7 +89,7 @@
                                             </div><!--end card-header-->
                                             <div class="card-body pt-0">
                                                 <label for="formFileLg" class="form-label">Upload ID Document</label>
-                                                <input class="form-control form-control-lg" id="formFileLg" type="file">
+                                                <input class="form-control form-control-lg" id="formFileLg" type="file" (change)="onFileSelected($event)">
                                             </div><!--end card-body-->
                                         </div><!--end card-->
                                     </div>

@@ -43,6 +43,15 @@ export class CommunicatorService {
     return this.http.post<T>(url, body, { headers });
   }
 
+  private patchData<T>(url: string, body: any, skipAuth = false): Observable<T> {
+    const headers = skipAuth ? new HttpHeaders({ 'Content-Type': 'application/json' }) : this.getAuthHeaders();
+    return this.http.patch<T>(url, body, { headers });
+  }
+
+
+  getAccountNameService(formInputs: any): Observable<any> {
+    return this.postData<any>(`${this.BASE_URL}/send/bank/resolve`, formInputs);
+  }
 
   getTransactionsService(): Observable<any> {
     return this.getData<any>(`${this.BASE_URL}/transactions`);
@@ -56,11 +65,23 @@ export class CommunicatorService {
     return this.postData<any>(`${this.BASE_URL}/receive/crypto`, formInputs);
   }
 
+  onSubmitInternalTransferService(formInputs: any): Observable<any> {
+    return this.postData<any>(`${this.BASE_URL}/send/bank`, formInputs);
+  }
+
+  onSubmitKYCService(formInputs: any): Observable<any> {
+    return this.postData<any>(`${this.BASE_URL}/kyc/biometric`, formInputs);
+  }
+
   onSubmitLoginService(formInputs: any): Observable<any> {
     return this.postData<any>(`${this.BASE_URL}/auth/login`, formInputs, true);
   }
 
   onSubmitRegisterService(formInputs: any): Observable<any> {
     return this.postData<any>(`${this.BASE_URL}/auth/register`, formInputs, true);
+  }
+
+  onSubmitTransferPinService(formInputs: any): Observable<any> {
+    return this.patchData<any>(`${this.BASE_URL}/settings/pin`, formInputs);
   }
 }
