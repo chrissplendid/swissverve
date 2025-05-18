@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 /*@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';*/
+@import "../node_modules/ngx-spinner/animations/ball-spin-clockwise.css";
 
 body {
     font-family: "Roboto", sans-serif;
@@ -25,6 +26,12 @@ body {
     background-color: #22c55e !important;
     border: #22c55e !important;
 }
+
+.btn-dark {
+    background-color: #0B1C3F !important;
+    border: #0B1C3F !important;
+}
+
 
 .btn-decline {
     background-color: #ef4d56 !important;

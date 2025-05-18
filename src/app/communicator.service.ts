@@ -57,8 +57,16 @@ export class CommunicatorService {
     return this.getData<any>(`${this.BASE_URL}/transactions`);
   }
 
+  onApproveService(formInputs: any, id: any): Observable<any> {
+    return this.patchData<any>(`${this.BASE_URL}/transactions/`+id, formInputs);
+  }
+
   onLoginService(): Observable<any> {
     return this.getData<any>(`${this.BASE_URL}/auth`);
+  }
+
+  onSubmitCryptoTransferService(formInputs: any): Observable<any> {
+    return this.postData<any>(`${this.BASE_URL}/send/crypto`, formInputs);
   }
 
   onSubmitDepositService(formInputs: any): Observable<any> {
@@ -69,12 +77,28 @@ export class CommunicatorService {
     return this.postData<any>(`${this.BASE_URL}/send/bank`, formInputs);
   }
 
+  onSubmitInternationalTransferService(formInputs: any): Observable<any> {
+    return this.postData<any>(`${this.BASE_URL}/send/bank`, formInputs);
+  }
+
   onSubmitKYCService(formInputs: any): Observable<any> {
     return this.postData<any>(`${this.BASE_URL}/kyc/biometric`, formInputs);
   }
 
+   onSubmitLocalTransferService(formInputs: any): Observable<any> {
+    return this.postData<any>(`${this.BASE_URL}/send/bank`, formInputs);
+  }
+
   onSubmitLoginService(formInputs: any): Observable<any> {
     return this.postData<any>(`${this.BASE_URL}/auth/login`, formInputs, true);
+  }
+
+  onSubmitPasswordService(formInputs: any): Observable<any> {
+    return this.patchData<any>(`${this.BASE_URL}/settings/password`, formInputs);
+  }
+
+  onSubmitProfileSettingsService(formInputs: any, id: any): Observable<any> {
+    return this.patchData<any>(`${this.BASE_URL}/profiles/`+id, formInputs);
   }
 
   onSubmitRegisterService(formInputs: any): Observable<any> {

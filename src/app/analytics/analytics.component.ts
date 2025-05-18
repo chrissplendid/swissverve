@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { CommunicatorService } from '../communicator.service';
 import { Component, OnInit  } from '@angular/core';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-analytics',
-  imports: [CommonModule],
+  imports: [CommonModule, NgxPaginationModule],
   templateUrl: './analytics.component.html',
   styleUrl: './analytics.component.css'
 })
@@ -12,6 +13,7 @@ export class AnalyticsComponent implements OnInit {
   accountName: any;
   accountNumber: any;
   balance: any;
+  page = 1;
   transactions: any;
 
   // A CONSTRUCTOR METHOD THAT RUNS BEFORE THE PAGE INITIALIZES

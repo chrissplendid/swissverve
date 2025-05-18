@@ -2,12 +2,13 @@ import { CommunicatorService } from '../communicator.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { RouterModule, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule, RouterModule],
+  imports: [FormsModule, NgxSpinnerModule, RouterModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -15,10 +16,11 @@ export class LoginComponent {
   token: any;
 
   // A CONSTRUCTOR METHOD THAT RUNS BEFORE THE PAGE INITIALIZES
-  constructor(private communicatorService: CommunicatorService, private cookieService: CookieService, private router: Router) { }
+  constructor(private communicatorService: CommunicatorService, private cookieService: CookieService, private spinner: NgxSpinnerService, private router: Router) { }
 
   // LOGIN METHOD
   login(loginData: NgForm) {
+    this.spinner.show();
 
     // A JSON DATA OF THE LOGIN INPUTS
     let loginJSONData = {
@@ -29,7 +31,8 @@ export class LoginComponent {
     // SEND LOGIN INPUTS TO THE SERVER THROUGH A SERVICE METHOD
     this.communicatorService.onSubmitLoginService(loginJSONData).subscribe({
       next: (res) => {
-        console.log('Login response:', res);
+        this.spinner.hide();
+        //console.log('Login response:', res);
 
         if (res?.message) {
           Swal.fire('Success', res.message, 'success');
@@ -44,7 +47,8 @@ export class LoginComponent {
         }
       },
       error: (err) => {
-        console.error('Login error:', err);
+        this.spinner.hide();
+        //console.error('Login error:', err);
         Swal.fire('Error', err.error.message, 'error');
       }
     })

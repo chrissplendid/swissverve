@@ -4,12 +4,12 @@ import { CommunicatorService } from '../communicator.service';
 import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { fromEvent } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-internaltransfer',
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, NgxSpinnerModule, ReactiveFormsModule],
   templateUrl: './internaltransfer.component.html',
   styleUrl: './internaltransfer.component.css'
 })
@@ -19,7 +19,7 @@ export class InternaltransferComponent implements AfterViewInit {
   form: FormGroup;
 
   // A CONSTRUCTOR METHOD THAT RUNS BEFORE THE PAGE INITIALIZES
-  constructor(private communicatorService: CommunicatorService, private fb: FormBuilder, private http: HttpClient) {
+  constructor(private communicatorService: CommunicatorService, private fb: FormBuilder, private spinner: NgxSpinnerService) {
     this.form = this.fb.group({
       accountNumber: ['123456789098']
     });
@@ -67,6 +67,7 @@ export class InternaltransferComponent implements AfterViewInit {
   }
 
   onInternalTransfer(internalTransferData: NgForm) {
+    this.spinner.show();
     // A JSON DATA OF THE INTERNAL TRANSFER INPUTS
     let internalTransferJSONData = {
       type: 'internal', 
@@ -80,9 +81,11 @@ export class InternaltransferComponent implements AfterViewInit {
 
     this.communicatorService.onSubmitInternalTransferService(internalTransferJSONData).subscribe({
       next: (res) => {
+        this.spinner.hide();
         Swal.fire('Success', res.message, 'success');
       },
       error: (err) => {
+        this.spinner.hide();
         Swal.fire('Error', err.error.message, 'error');
       }
     })

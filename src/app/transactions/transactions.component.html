@@ -41,33 +41,41 @@
                                             <th class="border-top-0">Charges</th>
                                             <th class="border-top-0">Description</th>
                                             <th class="border-top-0">Status</th>
-                                            <th class="border-top-0" style="display: hidden;" *ngIf="user; else adminFunction"></th>
-                                            <ng-template #adminFunction>
-                                                <th class="border-top-0">Approve</th>
-                                                <th class="border-top-0">Reject</th>
-                                            </ng-template>
-                                        </tr><!--end tr-->
+                                            <th class="border-top-0" *ngIf="!user">Approve</th>
+                                            <th class="border-top-0" *ngIf="!user">Reject</th>
+                                        </tr>
                                     </thead>
+
                                     <tbody>
-                                        <tr *ngFor="let transaction of transactions">
-                                            <td>#</td>
+                                        <tr
+                                            *ngFor="let transaction of transactions | paginate: { itemsPerPage: 10, currentPage: page }; let i = index">
+                                            <td>{{ (page - 1) * 10 + i + 1 }}</td> <!-- Correct row index -->
                                             <td>{{ transaction.reference }}</td>
                                             <td>{{ transaction.type }}</td>
-                                            <td>{{ transaction.created_at}}</td>
+                                            <td>{{ transaction.created_at }}</td>
                                             <td>${{ transaction.amount }}</td>
                                             <td>${{ transaction.fee }}</td>
                                             <td
-                                                style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; display: inline-block; vertical-align: top;">
-                                                {{ transaction.narration }}</td>
-                                            <td>{{ transaction.status}}</td>
-                                            <td class="text-end" style="display: hidden;" *ngIf="user; else adminFunction"></td>
-                                            <ng-template #adminFunction>
-                                                <td><button class="btn btn-approve">Approve</button></td>
-                                                <td><button class="btn btn-decline">Decline</button></td>
-                                            </ng-template>
-                                        </tr><!--end tr-->
+                                                style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">
+                                                {{ transaction.narration }}
+                                            </td>
+                                            <td>{{ transaction.status }}</td>
+
+                                            <!-- Only show action buttons if the transaction is pending and user is NOT logged in -->
+                                            <td *ngIf="!user && ['pending', 'processing'].includes(transaction.status)">
+                                                <button class="btn btn-approve"
+                                                    (click)="approve(transaction.id)">Approve</button>
+                                            </td>
+                                            <td *ngIf="!user && ['pending', 'processing'].includes(transaction.status)">
+                                                <button class="btn btn-decline">Decline</button>
+                                            </td>
+                                        </tr>
                                     </tbody>
-                                </table> <!--end table-->
+                                </table>
+
+                                <!-- Pagination Controls -->
+                                <pagination-controls (pageChange)="page = $event"></pagination-controls>
+
                             </div><!--end /div-->
                         </div><!--end card-body-->
                     </div><!--end card-->

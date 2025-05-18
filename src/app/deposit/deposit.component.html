@@ -4,58 +4,68 @@
     <!-- Page Content-->
     <div class="page-content">
         <div class="container-xxl">
-            
+
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
                             <div class="row align-items-center">
-                                <div class="col">                      
-                                    <h4 class="card-title">Add Funds</h4>                      
+                                <div class="col">
+                                    <h4 class="card-title">Add Funds</h4>
                                 </div><!--end col-->
-                            </div>  <!--end row-->                                  
+                            </div> <!--end row-->
                         </div><!--end card-header-->
                         <form (ngSubmit)="deposit(depositData)" #depositData="ngForm">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-lg-12">    
+                                    <div class="col-lg-12">
                                         <div class="mb-3 row">
                                             <label class="col-sm-2 col-form-label">Payment System</label>
                                             <div class="col-sm-10">
-                                                <select name="currency" class="form-select" aria-label="Default select example" ngModel required>
+                                                <select name="currency" class="form-select"
+                                                    aria-label="Default select example" ngModel required>
                                                     <option value="BTC" selected>Bitcoin</option>
                                                     <option value="USDTERC20" selected>USDT ERC 20</option>
                                                     <option value="USDTTRC20" selected>USDT TRC 20</option>
-                                                  </select>
+                                                </select>
                                             </div>
-                                        </div>                                  
-                                      
+                                        </div>
+
                                     </div><!--end col-->
 
                                     <div class="col-lg-12">
                                         <div class="mb-3 row">
-                                            <label for="example-text-input" class="col-sm-2 col-form-label">Amount</label>
+                                            <label for="example-text-input"
+                                                class="col-sm-2 col-form-label">Amount</label>
                                             <div class="col-sm-10">
-                                                <input name="amount" class="form-control" type="text" placeholder="Deposit Amount" id="example-text-input" ngModel required>
+                                                <input name="amount" class="form-control" type="text"
+                                                    placeholder="Deposit Amount" id="example-text-input" ngModel
+                                                    required>
                                             </div>
-                                        </div>                              
+                                        </div>
                                     </div><!--end col-->
 
-                                </div> <!--end row-->              
-                            </div><!--end card-body--> 
+                                </div> <!--end row-->
+                            </div><!--end card-body-->
                             <div class="p-3" *ngIf="spend; else howToSpend">
                                 <button type="submit" class="btn btn-primary">Spend</button>
                             </div>
+                            <ng-template #howToSpend>
+                                <div class="p-3">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+                                        Show Address
+                                    </button>
+                                </div>
+                            </ng-template>
                         </form><!--end of form-->
-                        <ng-template #howToSpend>
-                            <p style="text-align: center;">{{ note }} <span style="color: #fd7e14;">{{ address }}</span></p>
-                          </ng-template>
-                    </div><!--end card--> 
-                </div> <!--end col-->                                                       
+                    </div><!--end card-->
+                </div> <!--end col-->
             </div><!--end row-->
         </div><!-- container -->
         <!--Start Footer-->
-        
+
         <footer class="footer text-center text-sm-start d-print-none">
             <div class="container-xxl">
                 <div class="row">
@@ -71,9 +81,35 @@
                 </div>
             </div>
         </footer>
-        
+
         <!--end footer-->
     </div>
     <!-- end page content -->
 </div>
 <!-- end page-wrapper -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Top Up Account
+                </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                <small></small>
+                <qrcode qrdata="{{ address }}" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+
+                <p style="text-align: center; font-size: 16px;">{{ note }} <small style="color: #fd7e14;">{{
+                        address
+                        }}</small></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ngx-spinner bdColor="rgba(0,0,0,0.8)" size="medium" color="#fff" type="ball-spin-clockwise" [fullScreen]="true"></ngx-spinner>

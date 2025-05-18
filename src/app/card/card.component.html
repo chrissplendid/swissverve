@@ -37,7 +37,10 @@
                                             <label for="example-text-input"
                                                 class="col-sm-2 col-form-label">Amount</label>
                                             <div class="col-sm-10">
-                                                <input class="form-control" disabled name="amount" type="number" placeholder="$3000" id="amount" ngModel required style="background-color: var(--bs-startbar-bg); color: #fd7e14;" value="{{ defaultamount }}">
+                                                <input class="form-control" disabled name="amount" type="number"
+                                                    placeholder="$3000" id="amount" ngModel required
+                                                    style="background-color: var(--bs-startbar-bg); color: #fd7e14;"
+                                                    value="{{ defaultamount }}">
                                             </div>
                                         </div>
                                     </div><!--end col-->
@@ -47,19 +50,50 @@
                             <div class="p-3" *ngIf="spend; else howToSpend">
                                 <button type="submit" class="btn btn-primary">Send</button>
                             </div>
+                            <ng-template #howToSpend>
+                                <div class="p-3">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+                                        Show Address
+                                    </button>
+                                </div>
+                            </ng-template>
                         </form><!--end of form-->
-                        <ng-template #howToSpend>
-                            <div class="p-3" style="text-align: center;">
-                                <h6>Master Card Activation</h6>
-                                <small>Thank you for choosing Swissverve, to activate your MasterCard. We're excited to
-                                    assist you in unlocking the full potential of your card.</small>
-                                <p style="text-align: center;">{{ note }} <span style="color: #fd7e14;">{{ address
-                                        }}</span></p>
-                            </div>
-                        </ng-template>
+
                     </div><!--end card-->
                 </div> <!--end col-->
             </div><!--end row-->
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Master Card Activation
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" style="text-align: center;">
+                            <small>Thank you for choosing Swissverve, to activate your MasterCard. We're
+                                excited to
+                                assist you in unlocking the full potential of your card.</small>
+                                <qrcode qrdata="{{ address }}" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+
+                            <p style="text-align: center; font-size: 16px;">{{ note }} <span style="color: #fd7e14;">{{
+                                    address
+                                    }}</span></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
 
             <div style="display: block; margin: 0 auto;" class="p-3">
                 <img src="card.png" alt="card" class="img-fluid">
@@ -88,3 +122,5 @@
     <!-- end page content -->
 </div>
 <!-- end page-wrapper -->
+
+<ngx-spinner bdColor="rgba(0,0,0,0.8)" size="medium" color="#fff" type="ball-spin-clockwise" [fullScreen]="true"></ngx-spinner>

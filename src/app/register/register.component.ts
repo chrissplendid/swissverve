@@ -4,13 +4,14 @@ import { CookieService } from 'ngx-cookie-service';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { RouterModule, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 
 @Component({
   selector: 'app-register',
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, NgxSpinnerModule, RouterModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
@@ -19,7 +20,7 @@ export class RegisterComponent implements OnInit {
   token: any;
 
   // A CONSTRUCTOR METHOD THAT RUNS BEFORE THE PAGE INITIALIZES
-  constructor(private communicatorService: CommunicatorService, private cookieService: CookieService, private http: HttpClient, private router: Router) { }
+  constructor(private communicatorService: CommunicatorService, private cookieService: CookieService, private http: HttpClient, private spinner: NgxSpinnerService, private router: Router) { }
 
   ngOnInit(): void {
     this.http.get('/assets/json/countries.json').subscribe(data => {
@@ -28,6 +29,7 @@ export class RegisterComponent implements OnInit {
   }
 
   register(registerationData: NgForm) {
+    this.spinner.show();
 
     // A JSON DATA OF THE LOGIN INPUTS
     let registerationJSONData = {
@@ -45,7 +47,8 @@ export class RegisterComponent implements OnInit {
     // SEND LOGIN INPUTS TO THE SERVER THROUGH A SERVICE METHOD
     this.communicatorService.onSubmitRegisterService(registerationJSONData).subscribe({
       next: (res) => {
-        console.log('Register response:', res);
+        this.spinner.hide();
+        //console.log('Register response:', res);
 
         if (res?.message) {
           Swal.fire('Success', res.message, 'success');
@@ -60,7 +63,8 @@ export class RegisterComponent implements OnInit {
         }
       },
       error: (err) => {
-        console.error('Registration error:', err);
+        this.spinner.hide();
+        //console.error('Registration error:', err);
         Swal.fire('Error', err.error.message, 'error');
       }
     })
