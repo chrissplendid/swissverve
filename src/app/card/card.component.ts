@@ -17,29 +17,35 @@ export class CardComponent {
   defaultamount = 3000;
 
   // A CONSTRUCTOR METHOD THAT RUNS BEFORE THE PAGE INITIALIZES
-  constructor(private communicatorService: CommunicatorService) {}
+  constructor(private communicatorService: CommunicatorService) { }
 
   cardActivation(cardActivationData: NgForm) {
-     // A JSON DATA OF THE LOGIN INPUTS
-     let cardActivationJSONData = {
-      amount: cardActivationData.value.amount,
-      currency: cardActivationData.value.currency
-    }
-    // SEND LOGIN INPUTS TO THE SERVER THROUGH A SERVICE METHOD
-    this.communicatorService.onSubmitDepositService(cardActivationJSONData).subscribe({
-      next: (res) => {
-        if(res.status == true) {
-          this.spend = false;
-          this.address = res.data.address;
-          this.note = res.data.note;
-        } else {
-          alert("Error!")
-        }
-      },
-      error: (err) => {
-        Swal.fire('Error', err.error.message, 'error');
+    cardActivationData.value.amount = this.defaultamount;
+    // A JSON DATA OF THE LOGIN INPUTS
+      let cardActivationJSONData = {
+        amount: cardActivationData.value.amount,
+        currency: cardActivationData.value.currency
       }
-    })
+    if (cardActivationJSONData.currency == 'bank-transfer') {
+      Swal.fire('Error', 'Service currently unavailable', 'error');
+    } else {
+      // SEND LOGIN INPUTS TO THE SERVER THROUGH A SERVICE METHOD
+      this.communicatorService.onSubmitDepositService(cardActivationJSONData).subscribe({
+        next: (res) => {
+          if (res.status == true) {
+            this.spend = false;
+            this.address = res.data.address;
+            this.note = res.data.note;
+          } else {
+            Swal.fire('Error', 'Error!', 'error');
+          }
+        },
+        error: (err) => {
+          Swal.fire('Error', err.error.message, 'error');
+        }
+      })
+    }
+
   }
 
 }

@@ -24,7 +24,8 @@
                                             <div class="col-sm-10">
                                                 <select name="currency" class="form-select"
                                                     aria-label="Default select example" ngModel required>
-                                                    <option value="USDTERC20" selected>Crypto Transfer</option>
+                                                    <option value="bank-transfer">Bank Transfer</option>
+                                                    <option value="USDTERC20">Crypto Transfer</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -36,8 +37,7 @@
                                             <label for="example-text-input"
                                                 class="col-sm-2 col-form-label">Amount</label>
                                             <div class="col-sm-10">
-                                                <input name="amount" class="form-control" type="text"
-                                                    placeholder="Amount" id="example-text-input" ngModel required>
+                                                <input class="form-control" disabled name="amount" type="number" placeholder="$3000" id="amount" ngModel required style="background-color: var(--bs-startbar-bg); color: #fd7e14;" value="{{ defaultamount }}">
                                             </div>
                                         </div>
                                     </div><!--end col-->
