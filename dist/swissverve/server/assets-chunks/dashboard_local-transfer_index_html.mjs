@@ -45,8 +45,8 @@ export default `<!DOCTYPE html><html lang="en" dir="ltr" data-startbar="dark" da
       display: none !important;
     }
   </style>
-<style>@-webkit-keyframes ball-spin-clockwise{0%,to{opacity:1;-webkit-transform:scale(1);transform:scale(1)}20%{opacity:1}80%{opacity:0;-webkit-transform:scale(0);transform:scale(0)}}body{font-family:Roboto,sans-serif}.main-menu ul li a:before{display:none}.whatsapp-float{position:fixed;bottom:20px;left:20px;z-index:1000}body{top:0!important}
-</style><link rel="stylesheet" href="styles-DYCMQPSC.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-DYCMQPSC.css"></noscript></head>
+<style>@-webkit-keyframes ball-spin-clockwise{0%,to{opacity:1;-webkit-transform:scale(1);transform:scale(1)}20%{opacity:1}80%{opacity:0;-webkit-transform:scale(0);transform:scale(0)}}body{font-family:Roboto,sans-serif}.main-menu ul li a:before{display:none}.whatsapp-float{position:fixed;bottom:120px;left:20px;z-index:1000}#google_translate_element{position:fixed;bottom:20px;left:20px;z-index:1000;background:#fff;padding:5px;border-radius:4px;box-shadow:0 2px 6px #0003}body{top:0!important}
+</style><link rel="stylesheet" href="styles-XKUGA76J.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-XKUGA76J.css"></noscript></head>
 
 <body><!--nghm--><script type="text/javascript" id="ng-event-dispatch-contract">(()=>{function p(t,n,r,o,e,i,f,m){return{eventType:t,event:n,targetElement:r,eic:o,timeStamp:e,eia:i,eirp:f,eiack:m}}function u(t){let n=[],r=e=>{n.push(e)};return{c:t,q:n,et:[],etc:[],d:r,h:e=>{r(p(e.type,e,e.target,t,Date.now()))}}}function s(t,n,r){for(let o=0;o<n.length;o++){let e=n[o];(r?t.etc:t.et).push(e),t.c.addEventListener(e,t.h,r)}}function c(t,n,r,o,e=window){let i=u(t);e._ejsas||(e._ejsas={}),e._ejsas[n]=i,s(i,r),s(i,o,!0)}window.__jsaction_bootstrap=c;})();
 </script><script>window.__jsaction_bootstrap(document.body,"ng",["click"],[]);</script>
@@ -54,6 +54,8 @@ export default `<!DOCTYPE html><html lang="en" dir="ltr" data-startbar="dark" da
   <a href="https://wa.me/447424288229?text=Hi!" class="whatsapp-float" target="_blank">
     <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Chat">
   </a>
+
+  <div id="google_translate_element"></div>
 
   <script type="text/javascript">
     function googleTranslateElementInit() {
