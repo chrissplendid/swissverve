@@ -16,7 +16,9 @@ export class LoginComponent {
   token: any;
 
   // A CONSTRUCTOR METHOD THAT RUNS BEFORE THE PAGE INITIALIZES
-  constructor(private communicatorService: CommunicatorService, private cookieService: CookieService, private spinner: NgxSpinnerService, private router: Router) { }
+  constructor(private communicatorService: CommunicatorService, private cookieService: CookieService, private spinner: NgxSpinnerService, private router: Router) { 
+    this.spinner.hide();
+  }
 
   // LOGIN METHOD
   login(loginData: NgForm) {
