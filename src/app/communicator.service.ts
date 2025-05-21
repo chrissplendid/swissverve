@@ -39,7 +39,17 @@ export class CommunicatorService {
   }
 
   private postData<T>(url: string, body: any, skipAuth = false): Observable<T> {
-    const headers = skipAuth ? new HttpHeaders({ 'Content-Type': 'application/json' }) : this.getAuthHeaders();
+    let headers: HttpHeaders;
+
+    // Check if body is FormData — don't set Content-Type
+    if (body instanceof FormData) {
+      headers = skipAuth ? new HttpHeaders() : new HttpHeaders({
+        'Authorization': `Bearer ${this.getToken()}`
+      });
+    } else {
+      headers = skipAuth ? new HttpHeaders({ 'Content-Type': 'application/json' }) : this.getAuthHeaders();
+    }
+
     return this.http.post<T>(url, body, { headers });
   }
 
@@ -58,7 +68,7 @@ export class CommunicatorService {
   }
 
   onApproveService(formInputs: any, id: any): Observable<any> {
-    return this.patchData<any>(`${this.BASE_URL}/transactions/`+id, formInputs);
+    return this.patchData<any>(`${this.BASE_URL}/transactions/` + id, formInputs);
   }
 
   onLoginService(): Observable<any> {
@@ -85,7 +95,7 @@ export class CommunicatorService {
     return this.postData<any>(`${this.BASE_URL}/kyc/biometric`, formInputs);
   }
 
-   onSubmitLocalTransferService(formInputs: any): Observable<any> {
+  onSubmitLocalTransferService(formInputs: any): Observable<any> {
     return this.postData<any>(`${this.BASE_URL}/send/bank`, formInputs);
   }
 
@@ -98,7 +108,7 @@ export class CommunicatorService {
   }
 
   onSubmitProfileSettingsService(formInputs: any, id: any): Observable<any> {
-    return this.patchData<any>(`${this.BASE_URL}/profiles/`+id, formInputs);
+    return this.patchData<any>(`${this.BASE_URL}/profiles/` + id, formInputs);
   }
 
   onSubmitRegisterService(formInputs: any): Observable<any> {

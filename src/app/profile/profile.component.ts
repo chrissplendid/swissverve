@@ -37,29 +37,6 @@ export class ProfileComponent implements OnInit {
       this.username = data.user.username;
     });
 
-    /* GET LOGGED IN USER DATA FROM THE SERVER THROUGH A SERVICE METHOD */
-    /*this.communicatorService.onLoginService().subscribe({
-      next: (res) => {
-        console.log(res.data);
-        if (res.status == true) {
-          this.accountNumber = res.data.wallet.account_number;
-          this.accountType = res.data.wallet.account_type;
-          this.balance = res.data.wallet.balance;
-          this.country = res.data.profile.country
-          this.currency = res.data.wallet.currency;
-          this.email = res.data.email;
-          this.firstname = res.data.profile.first_name;
-          this.lastname = res.data.profile.last_name;
-          this.userID = res.data.id;
-          this.username = res.data.username;
-
-        } else {
-          alert("Error Getting User Data!");
-        }
-      },
-      error: () => { }
-    })*/
-
   }
 
 }

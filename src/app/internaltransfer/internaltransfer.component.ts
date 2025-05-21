@@ -16,7 +16,14 @@ import Swal from 'sweetalert2';
 export class InternaltransferComponent implements AfterViewInit {
   @ViewChild('accountInput') accountInput!: ElementRef;
   accountName: any;
+  accName: any;
+  accountNumber: any;
+  amount: any;
+  date: any;
+  fee: any;
   form: FormGroup;
+  transactionid: any;
+  transfer: boolean = true;
 
   // A CONSTRUCTOR METHOD THAT RUNS BEFORE THE PAGE INITIALIZES
   constructor(private communicatorService: CommunicatorService, private fb: FormBuilder, private spinner: NgxSpinnerService) {
@@ -83,6 +90,13 @@ export class InternaltransferComponent implements AfterViewInit {
       next: (res) => {
         this.spinner.hide();
         Swal.fire('Success', res.message, 'success');
+        this.transfer = false;
+        this.accName = res.data.wallet.user.profile.first_name + " " + res.data.wallet.user.profile.last_name;
+        this.accountNumber = res.data.wallet.account_number;
+        this.amount = res.data.amount;
+        this.date = res.data.updated_at;
+        this.fee = res.data.fee;
+        this.transactionid = res.data.id;
       },
       error: (err) => {
         this.spinner.hide();

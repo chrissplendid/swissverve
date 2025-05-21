@@ -4,86 +4,112 @@
     <!-- Page Content-->
     <div class="page-content">
         <div class="container-xxl">
-            
+
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
                             <div class="row align-items-center">
-                                <div class="col">                      
-                                    <h4 class="card-title">Internal Transfer</h4>                      
+                                <div class="col">
+                                    <h4 class="card-title">Internal Transfer</h4>
                                 </div><!--end col-->
-                            </div>  <!--end row-->                                  
+                            </div> <!--end row-->
                         </div><!--end card-header-->
                         <form (ngSubmit)="onInternalTransfer(internalTransferData)" #internalTransferData="ngForm">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="mb-3 row">
-                                            <label for="example-text-input" class="col-sm-2 col-form-label">Receiver's Bank Name <span style="color: red;">*</span></label>
+                                            <label for="example-text-input" class="col-sm-2 col-form-label">Receiver's
+                                                Bank Name <span style="color: red;">*</span></label>
                                             <div class="col-sm-10">
-                                                <input class="form-control" disabled name="receiversBank" type="text" placeholder="Swissverve" id="receiversBank" ngModel required style="background-color: var(--bs-startbar-bg); color: #fd7e14;" value="Swissverve">
+                                                <input class="form-control" disabled name="receiversBank" type="text"
+                                                    placeholder="Swissverve" id="receiversBank" ngModel required
+                                                    style="background-color: var(--bs-startbar-bg); color: #fd7e14;"
+                                                    value="Swissverve">
                                             </div>
-                                        </div>                              
+                                        </div>
                                     </div><!--end col-->
 
                                     <div class="col-lg-12">
                                         <div class="mb-3 row">
-                                            <label for="example-text-input" class="col-sm-2 col-form-label">Receiver's Account Number <span style="color: red;">*</span></label>
+                                            <label for="example-text-input" class="col-sm-2 col-form-label">Receiver's
+                                                Account Number <span style="color: red;">*</span></label>
                                             <div class="col-sm-10">
-                                                <input #accountInput class="form-control" maxlength="10" name="accountNumber" type="number" id="example-text-input" ngModel required>
+                                                <input #accountInput class="form-control" maxlength="10"
+                                                    name="accountNumber" type="number" id="example-text-input" ngModel
+                                                    required>
                                             </div>
-                                        </div>                              
+                                        </div>
                                     </div><!--end col-->
 
                                     <div class="col-lg-12">
                                         <div class="mb-3 row">
-                                            <label for="example-text-input" class="col-sm-2 col-form-label">Receiver's Name <span style="color: red;">*</span></label>
+                                            <label for="example-text-input" class="col-sm-2 col-form-label">Receiver's
+                                                Name <span style="color: red;">*</span></label>
                                             <div class="col-sm-10">
-                                                <input class="form-control" disabled name="accountName" type="text" id="example-text-input" ngModel required style="background-color: rgb(235, 235, 235); color: #fd7e14;" value="{{ accountName }}">
+                                                <input class="form-control" disabled name="accountName" type="text"
+                                                    id="example-text-input" ngModel required
+                                                    style="background-color: rgb(235, 235, 235); color: #fd7e14;"
+                                                    value="{{ accountName }}">
                                             </div>
-                                        </div>                              
+                                        </div>
                                     </div><!--end col-->
 
                                     <div class="col-lg-12">
                                         <div class="mb-3 row">
-                                            <label for="example-text-input" class="col-sm-2 col-form-label">Amount <span style="color: red;">*</span></label>
+                                            <label for="example-text-input" class="col-sm-2 col-form-label">Amount <span
+                                                    style="color: red;">*</span></label>
                                             <div class="col-sm-10">
-                                                <input name="amount" class="form-control" type="number" id="example-text-input" ngModel required>
+                                                <input name="amount" class="form-control" type="number"
+                                                    id="example-text-input" ngModel required>
                                             </div>
-                                        </div>                              
+                                        </div>
                                     </div><!--end col-->
 
                                     <div class="col-lg-12">
                                         <div class="mb-3 row">
-                                            <label for="example-text-input" class="col-sm-2 col-form-label">Description <span style="color: red;">*</span></label>
+                                            <label for="example-text-input" class="col-sm-2 col-form-label">Description
+                                                <span style="color: red;">*</span></label>
                                             <div class="col-sm-10">
-                                                <input name="description" class="form-control" type="text" id="example-text-input" ngModel required>
+                                                <input name="description" class="form-control" type="text"
+                                                    id="example-text-input" ngModel required>
                                             </div>
-                                        </div>                              
+                                        </div>
                                     </div><!--end col-->
 
                                     <div class="col-lg-12">
                                         <div class="mb-3 row">
-                                            <label for="example-text-input" class="col-sm-2 col-form-label">Transfer Pin <span style="color: red;">*</span></label>
+                                            <label for="example-text-input" class="col-sm-2 col-form-label">Transfer Pin
+                                                <span style="color: red;">*</span></label>
                                             <div class="col-sm-10">
-                                                <input name="transferPin" class="form-control" type="password" id="example-text-input" ngModel required>
+                                                <input name="transferPin" class="form-control" type="password"
+                                                    id="example-text-input" ngModel required>
                                             </div>
-                                        </div>                              
+                                        </div>
                                     </div><!--end col-->
 
-                                </div> <!--end row-->              
-                            </div><!--end card-body--> 
-                            <div class="p-3">
+                                </div> <!--end row-->
+                            </div><!--end card-body-->
+                            <div class="p-3" *ngIf="transfer; else showReceipt">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
+                            <ng-template #showReceipt>
+                                <div class="p-3">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+                                        Show Receipt
+                                    </button>
+                                </div>
+                            </ng-template>
                         </form><!--end of form-->
-                    </div><!--end card--> 
-                </div> <!--end col-->                                                       
+                    </div><!--end card-->
+                </div> <!--end col-->
             </div><!--end row-->
         </div><!-- container -->
         <!--Start Footer-->
-        
+
         <footer class="footer text-center text-sm-start d-print-none">
             <div class="container-xxl">
                 <div class="row">
@@ -99,11 +125,74 @@
                 </div>
             </div>
         </footer>
-        
+
         <!--end footer-->
     </div>
     <!-- end page content -->
 </div>
 <!-- end page-wrapper -->
 
-<ngx-spinner bdColor="rgba(0,0,0,0.8)" size="medium" color="#fff" type="ball-spin-clockwise" [fullScreen]="true"></ngx-spinner>
+<ngx-spinner bdColor="rgba(0,0,0,0.8)" size="medium" color="#fff" type="ball-spin-clockwise"
+    [fullScreen]="true"></ngx-spinner>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel"> Transaction Receipt </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Transfer Amount</td>
+                            <td>${{ amount }}</td>
+                        </tr>
+                        <tr>
+                            <td>Wire Fee</td>
+                            <td>${{ fee }}</td>
+                        </tr>
+                        <!--<tr>
+                            <td>Swift Fee Rate</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Swift Fee</td>
+                            <td></td>
+                        </tr>-->
+                        <tr>
+                            <td>Date</td>
+                            <td>{{ date }}</td>
+                        </tr>
+                        <tr>
+                            <td>Account Name</td>
+                            <td>{{ accName }}</td>
+                        </tr>
+                        <tr>
+                            <td>Account Number</td>
+                            <td>{{ accountNumber }}</td>
+                        </tr>
+                        <tr>
+                            <td>Transaction ID</td>
+                            <td>{{ transactionid }}</td>
+                        </tr>
+                        <tr>
+                            <td>Transaction Status</td>
+                            <td style="color: green;">Successful</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

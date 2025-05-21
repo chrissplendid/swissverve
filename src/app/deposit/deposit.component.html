@@ -48,7 +48,7 @@
                                 </div> <!--end row-->
                             </div><!--end card-body-->
                             <div class="p-3" *ngIf="spend; else howToSpend">
-                                <button type="submit" class="btn btn-primary">Spend</button>
+                                <button type="submit" class="btn btn-primary">Send</button>
                             </div>
                             <ng-template #howToSpend>
                                 <div class="p-3">
@@ -101,7 +101,7 @@
                 <small></small>
                 <qrcode qrdata="{{ address }}" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
 
-                <p style="text-align: center; font-size: 16px;">{{ note }} <small style="color: #fd7e14;">{{
+                <p style="text-align: center; font-size: small;">{{ note }} <small style="color: #fd7e14;">{{
                         address
                         }}</small></p>
             </div>
