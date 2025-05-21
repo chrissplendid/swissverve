@@ -25,17 +25,20 @@ body {
 .btn-approve {
     background-color: #22c55e !important;
     border: #22c55e !important;
+    color: #FFFFFF !important;
 }
 
 .btn-dark {
     background-color: #0B1C3F !important;
     border: #0B1C3F !important;
+    color: #FFFFFF !important;
 }
 
 
 .btn-decline {
     background-color: #ef4d56 !important;
     border: #ef4d56 !important;
+    color: #FFFFFF !important;
 }
 
 .text-primary {
@@ -51,4 +54,28 @@ body {
   bottom: 20px;
   left: 20px;
   z-index: 1000;
+}
+
+/* Hide the entire Google Translate toolbar */
+/*#google_translate_element {
+  display: none !important;
+}*/
+
+/* Hide the top banner that Google adds */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
+
+/* Hide any translation popup elements */
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
 }

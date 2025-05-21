@@ -103,8 +103,8 @@
         <div class="brand">
             <a routerLink="dashboard" class="logo">
                 <span>
-                        <img src="LOGO.png" alt="logo-small" class="logo-sm" style="width: 70px; height: 70px;">
-                    </span>
+                    <img src="LOGO.png" alt="logo-small" class="logo-sm" style="width: 70px; height: 70px;">
+                </span>
                 <h6 style="color: #fd7e14;">{{ username }}</h6>
             </a>
         </div>
@@ -202,6 +202,12 @@
                                 <span>Transactions</span>
                             </a>
                         </li><!--end nav-item-->
+                        <li *ngIf="!user" class="nav-item">
+                            <a class="nav-link" routerLink="users" role="button">
+                                <i class="iconoir-user menu-icon"></i>
+                                <span>Users</span>
+                            </a>
+                        </li><!--end nav-item-->
                         <li class="menu-label mt-2">
                             <small class="label-border">
                                 <div class="border_left hidden-xs"></div>
@@ -233,6 +239,11 @@
                             </a>
                         </li><!--end nav-item-->
                     </ul><!--end navbar-nav--->
+                    <ul class="navbar-nav mb-auto w-100 mt-3">
+                        <li class="nav-item">
+                            <div id="google_translate_element"></div>
+                        </li>
+                    </ul>
                 </div>
             </div><!--end startbar-collapse-->
         </div><!--end startbar-menu-->

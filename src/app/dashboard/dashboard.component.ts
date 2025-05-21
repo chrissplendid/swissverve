@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { CommunicatorService } from '../communicator.service';
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service'
@@ -6,13 +7,14 @@ import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent implements OnInit {
-  username: any;
   email: any;
+  user: boolean = true;
+  username: any;
 
   // A CONSTRUCTOR METHOD THAT RUNS BEFORE THE PAGE INITIALIZES
   constructor(private communicatorService: CommunicatorService, private cookieService: CookieService, private router: Router) { }
@@ -28,6 +30,11 @@ export class DashboardComponent implements OnInit {
       next: (res) => {
         console.log(res.data);
         if (res.status == true) {
+          if (res.data.access.includes('admin')) {
+            this.user = false;
+          } else {
+            this.user = true;
+          }
           this.communicatorService.setData({ user: res.data });
           this.username = res.data.username;
           this.email = res.data.email;

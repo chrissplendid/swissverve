@@ -63,12 +63,20 @@ export class CommunicatorService {
     return this.postData<any>(`${this.BASE_URL}/send/bank/resolve`, formInputs);
   }
 
+  getProfilesService(): Observable<any> {
+    return this.getData<any>(`${this.BASE_URL}/profiles`);
+  }
+
   getTransactionsService(): Observable<any> {
     return this.getData<any>(`${this.BASE_URL}/transactions`);
   }
 
   onApproveService(formInputs: any, id: any): Observable<any> {
     return this.patchData<any>(`${this.BASE_URL}/transactions/` + id, formInputs);
+  }
+
+  onKYCUpdateService(formInputs: any, id: any): Observable<any> {
+    return this.patchData<any>(`${this.BASE_URL}/kyc/biometric/` + id, formInputs);
   }
 
   onLoginService(): Observable<any> {

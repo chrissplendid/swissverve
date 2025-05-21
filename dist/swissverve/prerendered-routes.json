@@ -17,6 +17,7 @@
     "/dashboard/profile": {},
     "/dashboard/stocks": {},
     "/dashboard/transactions": {},
+    "/dashboard/users": {},
     "/faq": {},
     "/login": {},
     "/register": {},

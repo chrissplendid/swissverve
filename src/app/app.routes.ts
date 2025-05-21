@@ -25,13 +25,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DepositComponent } from './deposit/deposit.component';
 import { InternaltransferComponent } from './internaltransfer/internaltransfer.component';
 import { InternationaltransferComponent } from './internationaltransfer/internationaltransfer.component';
+import { KycComponent } from './kyc/kyc.component';
 import { LocaltransferComponent } from './localtransfer/localtransfer.component';
 import { LoanComponent } from './loan/loan.component';
 import { NftComponent } from './nft/nft.component';
 import { ProfileComponent } from './profile/profile.component';
 import { StocksComponent } from './stocks/stocks.component';
 import { TransactionsComponent } from './transactions/transactions.component';
-import { KycComponent } from './kyc/kyc.component';
+import { UsersComponent } from './users/users.component';
 
 export const routes: Routes = [
   {
@@ -65,7 +66,8 @@ export const routes: Routes = [
       { path: 'nft', component: NftComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'stocks', component: StocksComponent },
-      { path: 'transactions', component: TransactionsComponent }
+      { path: 'transactions', component: TransactionsComponent },
+      { path: 'users', component: UsersComponent }
     ]
   }
 ];
