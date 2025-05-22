@@ -13,6 +13,7 @@ export class AnalyticsComponent implements OnInit {
   accountName: any;
   accountNumber: any;
   balance: any;
+  is_kyc_submitted: boolean = true;
   page = 1;
   transactions: any;
 
@@ -26,6 +27,7 @@ export class AnalyticsComponent implements OnInit {
       this.accountName = data.user.profile.first_name + " " + data.user.profile.last_name;
       this.accountNumber = data.user.wallet.account_number;
       this.balance = data.user.wallet.balance;
+      this.is_kyc_submitted = data.user.profile.is_kyc_submitted;
     });
     /*this.communicatorService.onLoginService().subscribe({
       next: (res) => {

@@ -3,6 +3,12 @@
     <!-- Page Content-->
     <div class="page-content">
         <div class="container-xxl">
+            <section *ngIf="is_kyc_submitted; else kyc_warning"></section>
+            <ng-template #kyc_warning>
+                <div class="alert alert-danger" role="alert">
+                    Please submit your KYC to avoid the risk of your account being blocked.
+                </div>
+            </ng-template>
             <div class="row">
                 <div class="col-md-12 col-lg-6 col-xl-4">
                     <div class="card" style="min-height: 255px;">
@@ -150,7 +156,8 @@
                                         </tr><!--end tr-->
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let transaction of transactions | paginate: { itemsPerPage: 5, currentPage: page }">
+                                        <tr
+                                            *ngFor="let transaction of transactions | paginate: { itemsPerPage: 5, currentPage: page }">
                                             <td>#</td>
                                             <td>{{ transaction.reference }}</td>
                                             <td>{{ transaction.type }}</td>
