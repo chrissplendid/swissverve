@@ -3,50 +3,49 @@
 @import "../node_modules/ngx-spinner/animations/ball-spin-clockwise.css";
 
 body {
-    font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .btn {
-    background-color: #fd7e14 !important;
-    border: #fd7e14 !important;
+  background-color: #fd7e14 !important;
+  border: #fd7e14 !important;
 }
 
 .btn:hover {
-    background-color: #fd7e14 !important;
-    border: #fd7e14 !important;
-    opacity: 0.8;
+  background-color: #fd7e14 !important;
+  border: #fd7e14 !important;
+  opacity: 0.8;
 }
 
 .btn-primary {
-    background-color: #fd7e14 !important;
-    border: #fd7e14 !important;
+  background-color: #fd7e14 !important;
+  border: #fd7e14 !important;
 }
 
 .btn-approve {
-    background-color: #22c55e !important;
-    border: #22c55e !important;
-    color: #FFFFFF !important;
+  background-color: #22c55e !important;
+  border: #22c55e !important;
+  color: #ffffff !important;
 }
 
 .btn-dark {
-    background-color: #0B1C3F !important;
-    border: #0B1C3F !important;
-    color: #FFFFFF !important;
+  background-color: #0b1c3f !important;
+  border: #0b1c3f !important;
+  color: #ffffff !important;
 }
 
-
 .btn-decline {
-    background-color: #ef4d56 !important;
-    border: #ef4d56 !important;
-    color: #FFFFFF !important;
+  background-color: #ef4d56 !important;
+  border: #ef4d56 !important;
+  color: #ffffff !important;
 }
 
 .text-primary {
-    color: #fd7e14 !important;
+  color: #fd7e14 !important;
 }
 
 .main-menu ul li a::before {
-    display: none;
+  display: none;
 }
 
 .whatsapp-float {
@@ -69,7 +68,7 @@ body {
   background: white;
   padding: 5px;
   border-radius: 4px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* Hide the top banner that Google adds */
@@ -89,4 +88,34 @@ body {
 .goog-text-highlight {
   background-color: transparent !important;
   box-shadow: none !important;
+}
+
+.pin-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+.pin-digit {
+  width: 3.5rem;
+  height: 3.5rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  border: 2px solid #ced4da;
+  border-radius: 0.5rem;
+  outline-offset: 2px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.pin-digit:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 0.25);
+  outline: none;
+  background-color: #fff;
+}
+.modal-header .mastercard-icon {
+  width: 36px;
+  height: 24px;
+  margin-right: 0.5rem;
 }
