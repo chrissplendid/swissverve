@@ -26,6 +26,7 @@ export class AccountsettingsComponent implements OnInit {
   userID: any;
   username: any;
   pinisset: boolean = false;
+  user: boolean = true;
 
   // A CONSTRUCTOR METHOD THAT RUNS BEFORE THE PAGE INITIALIZES
   constructor(private communicatorService: CommunicatorService, private http: HttpClient, private spinner: NgxSpinnerService,) { }
@@ -37,6 +38,11 @@ export class AccountsettingsComponent implements OnInit {
     /* GET LOGGED IN USER DATA FROM THE SERVER THROUGH A SERVICE METHOD */
     this.communicatorService.data$.subscribe(data => {
       console.log(data);
+      if(data.user.access.includes('admin')) {
+        this.user = false;
+      } else {
+        this.user = true;
+      }
       //this.accountName = data.user.profile.first_name + " " + data.user.profile.last_name;
       //this.accountNumber = data.user.wallet.account_number;
       //this.accountType = data.user.wallet.account_type;

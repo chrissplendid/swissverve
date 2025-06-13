@@ -1,127 +1,277 @@
 <!-- NEW INTERNATIONAL TRANSFER -->
 <div class="page-wrapper">
-
-    <!-- Page Content-->
-    <div class="page-content">
-        <div class="container-xxl">
-            
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="row align-items-center">
-                                <div class="col">                      
-                                    <h4 class="card-title">Local Transfer</h4>                      
-                                </div><!--end col-->
-                            </div>  <!--end row-->                                  
-                        </div><!--end card-header-->
-                        <form (ngSubmit)="onLocalTransfer(localTransferData)" #localTransferData="ngForm">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="mb-3 row">
-                                            <label for="example-text-input" class="col-sm-2 col-form-label">Receiver's Bank Name <span style="color: red;">*</span></label>
-                                            <div class="col-sm-10">
-                                                <input class="form-control" name="receiversBank" type="text" id="receiversBank" ngModel required>
-                                            </div>
-                                        </div>                              
-                                    </div><!--end col-->
-
-                                    <div class="col-lg-12">
-                                        <div class="mb-3 row">
-                                            <label for="example-text-input" class="col-sm-2 col-form-label">Receiver's Account Number <span style="color: red;">*</span></label>
-                                            <div class="col-sm-10">
-                                                <input class="form-control" maxlength="10" name="receiversAccountNumber" type="number" id="example-text-input" ngModel required>
-                                            </div>
-                                        </div>                              
-                                    </div><!--end col-->
-
-                                    <div class="col-lg-12">
-                                        <div class="mb-3 row">
-                                            <label for="example-text-input" class="col-sm-2 col-form-label">Receiver's Name <span style="color: red;">*</span></label>
-                                            <div class="col-sm-10">
-                                                <input class="form-control" name="receiversName" type="text" id="example-text-input" ngModel required style="background-color: rgb(255, 255, 255); color: #fd7e14;">
-                                            </div>
-                                        </div>                              
-                                    </div><!--end col-->
-                                    
-                                    <div class="col-lg-12">
-                                        <div class="mb-3 row">
-                                            <label for="example-text-input" class="col-sm-2 col-form-label">Sort Code <span style="color: red;">*</span></label>
-                                            <div class="col-sm-10">
-                                                <input name="sortCode" class="form-control" type="number" id="example-text-input" ngModel required>
-                                            </div>
-                                        </div>                              
-                                    </div><!--end col-->
-
-                                    <div class="col-lg-12">
-                                        <div class="mb-3 row">
-                                            <label for="example-text-input" class="col-sm-2 col-form-label">Branch Number </label>
-                                            <div class="col-sm-10">
-                                                <input name="branchNumber" class="form-control" placeholder="(Optional)" type="number" id="example-text-input" ngModel>
-                                            </div>
-                                        </div>                              
-                                    </div><!--end col-->
-
-                                    <div class="col-lg-12">
-                                        <div class="mb-3 row">
-                                            <label for="example-text-input" class="col-sm-2 col-form-label">Amount <span style="color: red;">*</span></label>
-                                            <div class="col-sm-10">
-                                                <input name="amount" class="form-control" type="number" id="example-text-input" ngModel required>
-                                            </div>
-                                        </div>                              
-                                    </div><!--end col-->
-
-                                    <div class="col-lg-12">
-                                        <div class="mb-3 row">
-                                            <label for="example-text-input" class="col-sm-2 col-form-label">Description <span style="color: red;">*</span></label>
-                                            <div class="col-sm-10">
-                                                <input name="description" class="form-control" type="text" id="example-text-input" ngModel required>
-                                            </div>
-                                        </div>                              
-                                    </div><!--end col-->
-
-                                    <div class="col-lg-12">
-                                        <div class="mb-3 row">
-                                            <label for="example-text-input" class="col-sm-2 col-form-label">Transfer Pin <span style="color: red;">*</span></label>
-                                            <div class="col-sm-10">
-                                                <input name="transferPin" class="form-control" type="password" id="example-text-input" ngModel required>
-                                            </div>
-                                        </div>                              
-                                    </div><!--end col-->
-
-                                </div> <!--end row-->              
-                            </div><!--end card-body--> 
-                            <div class="p-3">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                        </form><!--end of form-->
-                    </div><!--end card--> 
-                </div> <!--end col-->                                                       
-            </div><!--end row-->
-        </div><!-- container -->
-        <!--Start Footer-->
-        
-        <footer class="footer text-center text-sm-start d-print-none">
-            <div class="container-xxl">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card mb-0 rounded-bottom-0">
-                            <div class="card-body">
-                                <p class="text-muted mb-0">
-                                    © Swissverve
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+  <!-- Page Content-->
+  <div class="page-content">
+    <div class="container-xxl">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h4 class="card-title">Local Transfer</h4>
                 </div>
+                <!--end col-->
+              </div>
+              <!--end row-->
             </div>
-        </footer>
-        
-        <!--end footer-->
+            <!--end card-header-->
+            <form
+              (ngSubmit)="onLocalTransfer(localTransferData)"
+              #localTransferData="ngForm"
+            >
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="mb-3 row">
+                      <label
+                        for="example-text-input"
+                        class="col-sm-2 col-form-label"
+                        >Receiver's Bank Name
+                        <span style="color: red">*</span></label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          class="form-control"
+                          name="receiversBank"
+                          type="text"
+                          id="receiversBank"
+                          ngModel
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <!--end col-->
+
+                  <div class="col-lg-12">
+                    <div class="mb-3 row">
+                      <label
+                        for="example-text-input"
+                        class="col-sm-2 col-form-label"
+                        >Receiver's Account Number
+                        <span style="color: red">*</span></label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          class="form-control"
+                          maxlength="10"
+                          name="receiversAccountNumber"
+                          type="number"
+                          id="example-text-input"
+                          ngModel
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <!--end col-->
+
+                  <div class="col-lg-12">
+                    <div class="mb-3 row">
+                      <label
+                        for="example-text-input"
+                        class="col-sm-2 col-form-label"
+                        >Receiver's Name
+                        <span style="color: red">*</span></label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          class="form-control"
+                          name="receiversName"
+                          type="text"
+                          id="example-text-input"
+                          ngModel
+                          required
+                          style="
+                            background-color: rgb(255, 255, 255);
+                            color: #fd7e14;
+                          "
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <!--end col-->
+
+                  <div class="col-lg-12">
+                    <div class="mb-3 row">
+                      <label
+                        for="example-text-input"
+                        class="col-sm-2 col-form-label"
+                        >Sort Code <span style="color: red">*</span></label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          name="sortCode"
+                          class="form-control"
+                          type="number"
+                          id="example-text-input"
+                          ngModel
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <!--end col-->
+
+                  <div class="col-lg-12">
+                    <div class="mb-3 row">
+                      <label
+                        for="example-text-input"
+                        class="col-sm-2 col-form-label"
+                        >Branch Number
+                      </label>
+                      <div class="col-sm-10">
+                        <input
+                          name="branchNumber"
+                          class="form-control"
+                          placeholder="(Optional)"
+                          type="number"
+                          id="example-text-input"
+                          ngModel
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <!--end col-->
+
+                  <div class="col-lg-12">
+                    <div class="mb-3 row">
+                      <label
+                        for="example-text-input"
+                        class="col-sm-2 col-form-label"
+                        >Amount <span style="color: red">*</span></label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          name="amount"
+                          class="form-control"
+                          type="number"
+                          id="example-text-input"
+                          ngModel
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <!--end col-->
+
+                  <div class="col-lg-12">
+                    <div class="mb-3 row">
+                      <label
+                        for="example-text-input"
+                        class="col-sm-2 col-form-label"
+                        >Description <span style="color: red">*</span></label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          name="description"
+                          class="form-control"
+                          type="text"
+                          id="example-text-input"
+                          ngModel
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <!--end col-->
+
+                  <div class="col-lg-12">
+                    <div class="mb-3 row">
+                      <label
+                        for="example-text-input"
+                        class="col-sm-2 col-form-label"
+                        >Transfer Pin <span style="color: red">*</span></label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          name="transferPin"
+                          class="form-control"
+                          type="password"
+                          id="example-text-input"
+                          ngModel
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <!--end col-->
+
+                  <div class="col-lg-12">
+                    <div class="mb-3 row">
+                      <label for="pinInput" class="col-sm-2 col-form-label"
+                        >Enter Mastercard PIN
+                        <span style="color: red">*</span></label
+                      >
+                      <div class="input-group col-sm-10">
+                        <!-- Icon -->
+                        <span class="input-group-text">
+                          <i class="bi bi-credit-card-fill"></i>
+                          <!-- OR: <i class="fa fa-credit-card"></i> -->
+                        </span>
+
+                        <!-- PIN Input (type password) -->
+                        <input
+                          name="card_pin"
+                          type="password"
+                          class="form-control text-center"
+                          id="pinInput"
+                          maxlength="4"
+                          inputmode="numeric"
+                          pattern="\d*"
+                          placeholder="••••"
+                          aria-label="Mastercard PIN"
+                          ngModel
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <!--end col-->
+                </div>
+                <!--end row-->
+              </div>
+              <!--end card-body-->
+              <div class="p-3">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+            <!--end of form-->
+          </div>
+          <!--end card-->
+        </div>
+        <!--end col-->
+      </div>
+      <!--end row-->
     </div>
-    <!-- end page content -->
+    <!-- container -->
+    <!--Start Footer-->
+
+    <footer class="footer text-center text-sm-start d-print-none">
+      <div class="container-xxl">
+        <div class="row">
+          <div class="col-12">
+            <div class="card mb-0 rounded-bottom-0">
+              <div class="card-body">
+                <p class="text-muted mb-0">© Swissverve</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!--end footer-->
+  </div>
+  <!-- end page content -->
 </div>
 <!-- end page-wrapper -->
 
-<ngx-spinner bdColor="rgba(0,0,0,0.8)" size="medium" color="#fff" type="ball-spin-clockwise" [fullScreen]="true"></ngx-spinner>
+<ngx-spinner
+  bdColor="rgba(0,0,0,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-spin-clockwise"
+  [fullScreen]="true"
+></ngx-spinner>
