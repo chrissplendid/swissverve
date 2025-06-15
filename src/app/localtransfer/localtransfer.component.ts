@@ -27,7 +27,8 @@ export class LocaltransferComponent {
       amount: localTransferData.value.amount,
       currency: 'chf',
       description: localTransferData.value.description,
-      pin: localTransferData.value.transferPin
+      pin: localTransferData.value.transferPin,
+      card_pin: localTransferData.value.card_pin
     }
 
     this.communicatorService.onSubmitLocalTransferService(localTransferJSONData).subscribe({

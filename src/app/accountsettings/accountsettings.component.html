@@ -327,15 +327,15 @@
             <!--end card-header-->
             <div class="card-body pt-0">
               <form
-                (ngSubmit)="onResetTransferPin(transferPinData)"
-                #transferPinData="ngForm"
+                (ngSubmit)="onSetCardPin(cardPinData)"
+                #cardPinData="ngForm"
               >
                 <div class="mb-3">
                   <label for="horizontalInput2" class="form-label"
                     >Account Number</label
                   >
                   <input
-                    type="number"
+                    type="text"
                     name="account_number"
                     class="form-control"
                     id="horizontalInput2"
@@ -357,7 +357,7 @@
 
                     <!-- PIN Input (type password) -->
                     <input
-                      name="card_pin"
+                      name="pin"
                       type="password"
                       class="form-control text-center"
                       id="pinInput"
@@ -371,7 +371,34 @@
                     />
                   </div>
                 </div>
-                <button type="button" class="btn btn-primary">Submit</button>
+                <div class="mb-3">
+                  <label for="horizontalInput2" class="form-label"
+                    >Confirm Card Pin</label
+                  >
+                  <div class="input-group">
+                    <!-- Icon -->
+                    <span class="input-group-text">
+                      <i class="bi bi-credit-card-fill"></i>
+                      <!-- OR: <i class="fa fa-credit-card"></i> -->
+                    </span>
+
+                    <!-- PIN Input (type password) -->
+                    <input
+                      name="pin_confirmation"
+                      type="password"
+                      class="form-control text-center"
+                      id="pinInput"
+                      maxlength="4"
+                      inputmode="numeric"
+                      pattern="\d*"
+                      placeholder="••••"
+                      aria-label="Mastercard PIN"
+                      ngModel
+                      required
+                    />
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
               </form>
             </div>
             <!--end card-body-->

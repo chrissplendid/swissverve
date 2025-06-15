@@ -116,6 +116,36 @@ export class AccountsettingsComponent implements OnInit {
 
   }
 
+  // SET CARD PIN METHOD
+  onSetCardPin(cardPinData: NgForm) {
+    this.spinner.show();
+
+    // A JSON DATA OF THE LOGIN INPUTS
+    let transferPinJSONData = {
+      account_number: cardPinData.value.account_number,
+      pin: cardPinData.value.pin,
+      pin_confirmation: cardPinData.value.pin_confirmation
+    }
+
+    // SEND PASSWORD INPUTS TO THE SERVER THROUGH A SERVICE METHOD
+    this.communicatorService.onSubmitCardPinService(transferPinJSONData).subscribe({
+      next: (res) => {
+        this.spinner.hide();
+        console.log('Card pin response:', res);
+
+        if (res?.message) {
+          Swal.fire('Success', res.message, 'success');
+        }
+      },
+      error: (err) => {
+        this.spinner.hide();
+        console.error('Card pin error:', err);
+        Swal.fire('Error', err.error.message, 'error');
+      }
+    })
+
+  }
+
   // UPDATE PROFILE METHOD
   onUpdateProfile(profileData: NgForm) {
     this.spinner.show();

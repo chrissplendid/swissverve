@@ -83,6 +83,10 @@ export class CommunicatorService {
     return this.getData<any>(`${this.BASE_URL}/auth`);
   }
 
+  onSubmitCardPinService(formInputs: any): Observable<any> {
+    return this.patchData<any>(`${this.BASE_URL}/settings/pin/card`, formInputs);
+  }
+
   onSubmitCryptoTransferService(formInputs: any): Observable<any> {
     return this.postData<any>(`${this.BASE_URL}/send/crypto`, formInputs);
   }

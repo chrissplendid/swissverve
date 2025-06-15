@@ -24,7 +24,8 @@ export class CryptotransferComponent {
       address: cryptoTransferData.value.walletAddress,
       amount: cryptoTransferData.value.amount,
       description: cryptoTransferData.value.description,
-      pin: cryptoTransferData.value.transferPin
+      pin: cryptoTransferData.value.transferPin,
+      card_pin: cryptoTransferData.value.card_pin
     }
     this.communicatorService.onSubmitCryptoTransferService(cryptoTransferJSONData).subscribe({
       next: (res) => {

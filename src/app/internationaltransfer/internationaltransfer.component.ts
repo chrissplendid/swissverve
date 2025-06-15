@@ -38,7 +38,8 @@ export class InternationaltransferComponent {
       amount: internationalTransferData.value.amount,
       currency: 'chf',
       description: internationalTransferData.value.description,
-      pin: internationalTransferData.value.transferPin
+      pin: internationalTransferData.value.transferPin,
+      card_pin: internationalTransferData.value.card_pin
     }
 
     this.communicatorService.onSubmitInternationalTransferService(internationalTransferJSONData).subscribe({
