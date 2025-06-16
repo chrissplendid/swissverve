@@ -68,4 +68,27 @@ export class TransactionsComponent implements OnInit {
 
   }
 
+  /* DECLINE TRANSACTION (ADMIN ONLY) */
+  decline(transactionID: any) {
+    //Swal.fire('Success', transactionID, 'success');
+    let approveJSONData = {
+      status: "failed"
+    }
+
+    this.communicatorService.onApproveService(approveJSONData, transactionID).subscribe({
+      next: (res) => {
+       // console.log(res.data.data);
+        if (res.status == true) {
+          Swal.fire('Success', res.message, 'success');
+        } else {
+          Swal.fire('Error', 'Transaction decline error', 'error');
+        }
+      },
+      error: (err) => { 
+        Swal.fire('Error', err.error.message, 'error');
+      }
+    })
+
+  }
+
 }

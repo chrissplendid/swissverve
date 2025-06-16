@@ -1,110 +1,153 @@
 <div class="page-wrapper">
-
-    <!-- Page Content-->
-    <div class="page-content">
-        <div class="container-xxl">
-            <div class="row justify-content-center">
-                <div class="col-md-12 col-lg-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="row align-items-center">
-                                <div class="col">
-                                    <h4 class="card-title">Latest Transactions</h4>
-                                </div><!--end col-->
-                                <div class="col-auto">
-                                    <div class="dropdown">
-                                        <a href="#" class="btn bt btn-light dropdown-toggle" data-bs-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
-                                            <i class="icofont-calendar fs-5 me-1"></i> This Year<i
-                                                class="las la-angle-down ms-1"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <a class="dropdown-item" href="#">Today</a>
-                                            <a class="dropdown-item" href="#">Last Week</a>
-                                            <a class="dropdown-item" href="#">Last Month</a>
-                                            <a class="dropdown-item" href="#">This Year</a>
-                                        </div>
-                                    </div>
-                                </div><!--end col-->
-                            </div> <!--end row-->
-                        </div><!--end card-header-->
-                        <div class="card-body pt-0">
-                            <div class="table-responsive">
-                                <table class="table mb-0">
-                                    <thead class="table-light">
-                                        <tr>
-                                            <th class="border-top-0">#</th>
-                                            <th class="border-top-0">Ref</th>
-                                            <th class="border-top-0">Category</th>
-                                            <th class="border-top-0">Transaction Date</th>
-                                            <th class="border-top-0">Amount</th>
-                                            <th class="border-top-0">Charges</th>
-                                            <th class="border-top-0">Description</th>
-                                            <th class="border-top-0">Status</th>
-                                            <th class="border-top-0" *ngIf="!user">Approve</th>
-                                            <th class="border-top-0" *ngIf="!user">Reject</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr
-                                            *ngFor="let transaction of transactions | paginate: { itemsPerPage: 10, currentPage: page }; let i = index">
-                                            <td>{{ (page - 1) * 10 + i + 1 }}</td> <!-- Correct row index -->
-                                            <td>{{ transaction.reference }}</td>
-                                            <td>{{ transaction.type }}</td>
-                                            <td>{{ transaction.created_at }}</td>
-                                            <td>${{ transaction.amount }}</td>
-                                            <td>${{ transaction.fee }}</td>
-                                            <td
-                                                style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">
-                                                {{ transaction.narration }}
-                                            </td>
-                                            <td>{{ transaction.status }}</td>
-
-                                            <!-- Only show action buttons if the transaction is pending and user is NOT logged in -->
-                                            <td *ngIf="!user && ['pending', 'processing'].includes(transaction.status)">
-                                                <button class="btn btn-approve"
-                                                    (click)="approve(transaction.id)">Approve</button>
-                                            </td>
-                                            <td *ngIf="!user && ['pending', 'processing'].includes(transaction.status)">
-                                                <button class="btn btn-decline">Decline</button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <!-- Pagination Controls -->
-                                <pagination-controls (pageChange)="page = $event"></pagination-controls>
-
-                            </div><!--end /div-->
-                        </div><!--end card-body-->
-                    </div><!--end card-->
-                </div> <!--end col-->
-
-            </div><!--end row-->
-
-        </div><!-- container -->
-
-        <!--Start Footer-->
-
-        <footer class="footer text-center text-sm-start d-print-none">
-            <div class="container-xxl">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card mb-0 rounded-bottom-0">
-                            <div class="card-body">
-                                <p class="text-muted mb-0">
-                                    © Swissverve
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+  <!-- Page Content-->
+  <div class="page-content">
+    <div class="container-xxl">
+      <div class="row justify-content-center">
+        <div class="col-md-12 col-lg-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h4 class="card-title">Latest Transactions</h4>
                 </div>
+                <!--end col-->
+                <div class="col-auto">
+                  <div class="dropdown">
+                    <a
+                      href="#"
+                      class="btn bt btn-light dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <i class="icofont-calendar fs-5 me-1"></i> This Year<i
+                        class="las la-angle-down ms-1"
+                      ></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                      <a class="dropdown-item" href="#">Today</a>
+                      <a class="dropdown-item" href="#">Last Week</a>
+                      <a class="dropdown-item" href="#">Last Month</a>
+                      <a class="dropdown-item" href="#">This Year</a>
+                    </div>
+                  </div>
+                </div>
+                <!--end col-->
+              </div>
+              <!--end row-->
             </div>
-        </footer>
+            <!--end card-header-->
+            <div class="card-body pt-0">
+              <div class="table-responsive">
+                <table class="table mb-0">
+                  <thead class="table-light">
+                    <tr>
+                      <th class="border-top-0">#</th>
+                      <th class="border-top-0">Ref</th>
+                      <th class="border-top-0">Category</th>
+                      <th class="border-top-0">Transaction Date</th>
+                      <th class="border-top-0">Amount</th>
+                      <th class="border-top-0">Charges</th>
+                      <th class="border-top-0">Description</th>
+                      <th class="border-top-0">Status</th>
+                      <th class="border-top-0" *ngIf="!user">Approve</th>
+                      <th class="border-top-0" *ngIf="!user">Reject</th>
+                    </tr>
+                  </thead>
 
-        <!--end footer-->
+                  <tbody>
+                    <tr
+                      *ngFor="
+                        let transaction of transactions
+                          | paginate : { itemsPerPage: 10, currentPage: page };
+                        let i = index
+                      "
+                    >
+                      <td>{{ (page - 1) * 10 + i + 1 }}</td>
+                      <!-- Correct row index -->
+                      <td>{{ transaction.reference }}</td>
+                      <td>{{ transaction.type }}</td>
+                      <td>{{ transaction.created_at }}</td>
+                      <td>${{ transaction.amount }}</td>
+                      <td>${{ transaction.fee }}</td>
+                      <td
+                        style="
+                          white-space: nowrap;
+                          overflow: hidden;
+                          text-overflow: ellipsis;
+                          max-width: 200px;
+                        "
+                      >
+                        {{ transaction.narration }}
+                      </td>
+                      <td>{{ transaction.status }}</td>
+
+                      <!-- Only show action buttons if the transaction is pending and user is NOT logged in -->
+                      <td
+                        *ngIf="
+                          !user &&
+                          ['pending', 'processing'].includes(transaction.status)
+                        "
+                      >
+                        <button
+                          class="btn btn-approve"
+                          (click)="approve(transaction.id)"
+                        >
+                          Approve
+                        </button>
+                      </td>
+                      <td
+                        *ngIf="
+                          !user &&
+                          ['pending', 'processing'].includes(transaction.status)
+                        "
+                      >
+                        <button
+                          class="btn btn-decline"
+                          (click)="decline(transaction.id)"
+                        >
+                          Decline
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <!-- Pagination Controls -->
+                <pagination-controls
+                  (pageChange)="page = $event"
+                ></pagination-controls>
+              </div>
+              <!--end /div-->
+            </div>
+            <!--end card-body-->
+          </div>
+          <!--end card-->
+        </div>
+        <!--end col-->
+      </div>
+      <!--end row-->
     </div>
-    <!-- end page content -->
+    <!-- container -->
+
+    <!--Start Footer-->
+
+    <footer class="footer text-center text-sm-start d-print-none">
+      <div class="container-xxl">
+        <div class="row">
+          <div class="col-12">
+            <div class="card mb-0 rounded-bottom-0">
+              <div class="card-body">
+                <p class="text-muted mb-0">© Swissverve</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!--end footer-->
+  </div>
+  <!-- end page content -->
 </div>
 <!-- end page-wrapper -->
