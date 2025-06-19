@@ -1,89 +1,116 @@
 import { CommonModule } from '@angular/common';
-import { CommunicatorService } from '../communicator.service';
 import { Component, OnInit } from '@angular/core';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import Swal from 'sweetalert2';
+import { CommunicatorService } from '../communicator.service';
 
 @Component({
   selector: 'app-users',
+  standalone: true,
   imports: [CommonModule, NgxPaginationModule, NgxSpinnerModule],
   templateUrl: './users.component.html',
-  styleUrl: './users.component.css'
+  styleUrls: ['./users.component.css'],
 })
 export class UsersComponent implements OnInit {
-  page = 1;
-  users: any;
-  user: boolean = true;
+  users: any[] = [];
+  page: number = 1;
+  totalItems: number = 0;
+  links: any[] = [];
 
-  // A CONSTRUCTOR METHOD THAT RUNS BEFORE THE PAGE INITIALIZES
-  constructor(private communicatorService: CommunicatorService, private spinner: NgxSpinnerService) { }
+  constructor(
+    private communicatorService: CommunicatorService,
+    private spinner: NgxSpinnerService
+  ) {}
 
   ngOnInit(): void {
-    /* GET TRANSACTIONS DATA */
+    this.loadUsers(this.page);
+  }
+
+  loadUsers(page: number): void {
     this.spinner.show();
-    this.communicatorService.getProfilesService().subscribe({
+
+    this.communicatorService.getProfilesService(page).subscribe({
       next: (res) => {
-        this.spinner.show();
-        // console.log(res.data.data);
-        if (res.data) {
+        this.spinner.hide();
+        if (res?.data?.data) {
           this.users = res.data.data;
+          this.links = res.data.links || [];
+          this.totalItems = res.data.total || 0;
+          this.page = page; // sync page number with result
         } else {
-          this.spinner.show();
-          Swal.fire('Error', 'Error getting user data', 'error');
+          this.handleError('No user data received');
         }
       },
-      error: (err) => {
-        console.log(err);
-        this.spinner.show();
-      }
-    })
+      error: () => {
+        this.spinner.hide();
+        this.handleError('Failed to fetch user data');
+      },
+    });
   }
 
-  approve(profileID: any) {
+  approve(profileId: any): void {
+    const payload = { status: 'verified' };
+    this.updateKycStatus(profileId, payload, 'Approved');
+  }
+
+  reject(profileId: any): void {
+    const payload = { status: 'failed' };
+    this.updateKycStatus(profileId, payload, 'Rejected');
+  }
+
+  private updateKycStatus(profileId: any, payload: any, successTitle: string): void {
     this.spinner.show();
-    let approveJSONData = {
-      status: "verified"
-    }
-
-    this.communicatorService.onKYCUpdateService(approveJSONData, profileID).subscribe({
+    this.communicatorService.onKYCUpdateService(payload, profileId).subscribe({
       next: (res) => {
-        this.spinner.show();
-        // console.log(res.data.data);
-        if (res.status == true) {
-          Swal.fire('Success', res.message, 'success');
+        this.spinner.hide();
+        if (res.status === true) {
+          Swal.fire(successTitle, res.message, 'success');
+          this.loadUsers(this.page); // reload same page
         } else {
-          Swal.fire('Error', 'KYC approval error', 'error');
+          this.handleError(`${successTitle} failed`);
         }
       },
       error: (err) => {
-        this.spinner.show();
-        Swal.fire('Error', err.error.message, 'error');
-      }
-    })
-  }
-
-  reject(profileID: any) {
-    this.spinner.show();
-    let rejectJSONData = {
-      status: "failed"
-    }
-
-    this.communicatorService.onKYCUpdateService(rejectJSONData, profileID).subscribe({
-      next: (res) => {
-        this.spinner.show();
-        // console.log(res.data.data);
-        if (res.status == true) {
-          Swal.fire('Success', res.message, 'success');
-        } else {
-          Swal.fire('Error', 'KYC reject error', 'error');
-        }
+        this.spinner.hide();
+        this.handleError(err.error?.message || `${successTitle} failed`);
       },
-      error: (err) => {
-        Swal.fire('Error', err.error.message, 'error');
-      }
-    })
+    });
   }
 
+  // Pagination Helpers
 
+  onPaginate(link: any): void {
+    if (!link?.url) return;
+    const pageNumber = this.extractPageNumber(link.url);
+    if (pageNumber !== null) {
+      this.loadUsers(pageNumber);
+    }
+  }
+
+  extractPageNumber(url: string): number | null {
+    const match = url.match(/page=(\d+)/);
+    return match ? +match[1] : null;
+  }
+
+  getLink(type: 'previous' | 'next'): any {
+    return this.links.find((link) =>
+      link.label.toLowerCase().includes(type)
+    );
+  }
+
+  isNavControl(label: string): boolean {
+    const lower = label.toLowerCase();
+    return lower.includes('previous') || lower.includes('next');
+  }
+
+  parseLabel(label: string): string {
+    if (label.toLowerCase().includes('previous')) return '&laquo;';
+    if (label.toLowerCase().includes('next')) return '&raquo;';
+    return label;
+  }
+
+  private handleError(message: string): void {
+    Swal.fire('Error', message, 'error');
+  }
 }

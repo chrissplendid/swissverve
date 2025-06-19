@@ -63,9 +63,10 @@ export class CommunicatorService {
     return this.postData<any>(`${this.BASE_URL}/send/bank/resolve`, formInputs);
   }
 
-  getProfilesService(): Observable<any> {
-    return this.getData<any>(`${this.BASE_URL}/profiles`);
-  }
+  getProfilesService(page: number = 1): Observable<any> {
+  return this.getData<any>(`${this.BASE_URL}/profiles?page=${page}`);
+}
+
 
   getTransactionsService(): Observable<any> {
     return this.getData<any>(`${this.BASE_URL}/transactions`);
