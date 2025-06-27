@@ -49,7 +49,7 @@ export default `<!doctype html>
       display: none !important;
     }
   </style>
-<style>@-webkit-keyframes ball-spin-clockwise{0%,to{opacity:1;-webkit-transform:scale(1);transform:scale(1)}20%{opacity:1}80%{opacity:0;-webkit-transform:scale(0);transform:scale(0)}}body{font-family:Roboto,sans-serif}.whatsapp-float{position:fixed;bottom:120px;left:20px;z-index:1000}#google_translate_element{position:fixed;bottom:20px;left:20px;z-index:1000;background:#fff;padding:5px;border-radius:4px;box-shadow:0 2px 6px #0003}body{top:0!important}</style><link rel="stylesheet" href="styles-RXDQRN22.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-RXDQRN22.css"></noscript></head>
+<style>@-webkit-keyframes ball-spin-clockwise{0%,to{opacity:1;-webkit-transform:scale(1);transform:scale(1)}20%{opacity:1}80%{opacity:0;-webkit-transform:scale(0);transform:scale(0)}}body{font-family:Roboto,sans-serif}.whatsapp-float{position:fixed;bottom:120px;left:20px;z-index:1000}#google_translate_element{position:fixed;bottom:20px;left:20px;z-index:1000;background:#fff;padding:5px;border-radius:4px;box-shadow:0 2px 6px #0003}body{top:0!important}</style><link rel="stylesheet" href="styles-7U3QIYCN.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-7U3QIYCN.css"></noscript></head>
 
 <body ngcm="">
   <app-root></app-root>
