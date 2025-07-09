@@ -59,7 +59,31 @@ export class UsersComponent implements OnInit {
     this.updateKycStatus(profileId, payload, 'Rejected');
   }
 
-  private updateKycStatus(profileId: any, payload: any, successTitle: string): void {
+  closeAccount(profileId: any) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'This action will permanently terminate the users account.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, close it!',
+      cancelButtonText: 'Cancel',
+      reverseButtons: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // SHOW LOADER ANIMATION
+        this.spinner.show();
+
+        const payload = { status: 'Delete' };
+        this.onCloseAccount(profileId, payload, 'Close');
+      }
+    });
+  }
+
+  private updateKycStatus(
+    profileId: any,
+    payload: any,
+    successTitle: string
+  ): void {
     this.spinner.show();
     this.communicatorService.onKYCUpdateService(payload, profileId).subscribe({
       next: (res) => {
@@ -78,6 +102,31 @@ export class UsersComponent implements OnInit {
     });
   }
 
+  private onCloseAccount(
+    profileId: any,
+    payload: any,
+    successTitle: string
+  ): void {
+    this.spinner.show();
+    /*this.communicatorService
+      .onCloseAccountService(payload, profileId)
+      .subscribe({
+        next: (res) => {
+          this.spinner.hide();
+          if (res.status === true) {
+            Swal.fire(successTitle, res.message, 'success');
+            this.loadUsers(this.page); // reload same page
+          } else {
+            this.handleError(`${successTitle} failed`);
+          }
+        },
+        error: (err) => {
+          this.spinner.hide();
+          this.handleError(err.error?.message || `${successTitle} failed`);
+        },
+      });*/
+  }
+
   // Pagination Helpers
 
   onPaginate(link: any): void {
@@ -94,9 +143,7 @@ export class UsersComponent implements OnInit {
   }
 
   getLink(type: 'previous' | 'next'): any {
-    return this.links.find((link) =>
-      link.label.toLowerCase().includes(type)
-    );
+    return this.links.find((link) => link.label.toLowerCase().includes(type));
   }
 
   isNavControl(label: string): boolean {

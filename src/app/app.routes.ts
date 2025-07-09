@@ -33,6 +33,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { StocksComponent } from './stocks/stocks.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { UsersComponent } from './users/users.component';
+import { TopUpComponent } from './top-up/top-up.component';
 
 export const routes: Routes = [
   {
@@ -66,8 +67,9 @@ export const routes: Routes = [
       { path: 'nft', component: NftComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'stocks', component: StocksComponent },
+      { path: 'top-up', component: TopUpComponent },
       { path: 'transactions', component: TransactionsComponent },
-      { path: 'users', component: UsersComponent }
+      { path: 'users', component: UsersComponent },
     ]
   }
 ];

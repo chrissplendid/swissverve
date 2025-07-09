@@ -189,6 +189,12 @@
                                 <span>Stocks</span>
                             </a>
                         </li><!--end nav-item-->
+                        <li *ngIf="!user" class="nav-item">
+                            <a class="nav-link" routerLink="top-up" role="button">
+                                <i class="iconoir-user menu-icon"></i>
+                                <span>Top Up <span class="badge badge-danger">New</span></span>
+                            </a>
+                        </li><!--end nav-item-->
                         <li class="menu-label mt-2">
                             <small class="label-border">
                                 <div class="border_left hidden-xs"></div>

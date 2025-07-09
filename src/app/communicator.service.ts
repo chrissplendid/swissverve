@@ -76,6 +76,11 @@ export class CommunicatorService {
     return this.patchData<any>(`${this.BASE_URL}/transactions/` + id, formInputs);
   }
 
+  onCloseAccountService(formInputs: any, id: any): Observable<any> {
+    return this.patchData<any>(`${this.BASE_URL}/profiles/` + id, formInputs);
+  }
+
+
   onKYCUpdateService(formInputs: any, id: any): Observable<any> {
     return this.patchData<any>(`${this.BASE_URL}/kyc/biometric/` + id, formInputs);
   }
@@ -126,6 +131,10 @@ export class CommunicatorService {
 
   onSubmitRegisterService(formInputs: any): Observable<any> {
     return this.postData<any>(`${this.BASE_URL}/auth/register`, formInputs, true);
+  }
+
+  onSubmitTopUpService(formInputs: any): Observable<any> {
+    return this.postData<any>(`${this.BASE_URL}/send/bank`, formInputs, true);
   }
 
   onSubmitTransferPinService(formInputs: any): Observable<any> {
