@@ -43,7 +43,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let profile of users; let i = index">
+                    <tr *ngFor="let profile of activeUsers; let i = index">
                       <td>{{ (page - 1) * 25 + i + 1 }}</td>
                       <td>{{ profile.first_name }}</td>
                       <td>{{ profile.last_name }}</td>

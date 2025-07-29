@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CommunicatorService {
   private data = new BehaviorSubject<any>(null);
@@ -16,10 +16,7 @@ export class CommunicatorService {
 
   private readonly BASE_URL = 'https://api.swissverve.com/api';
 
-  constructor(
-    private http: HttpClient,
-    private cookieService: CookieService
-  ) { }
+  constructor(private http: HttpClient, private cookieService: CookieService) {}
 
   private getToken(): string {
     return this.cookieService.get('userToken') || '';
@@ -28,14 +25,23 @@ export class CommunicatorService {
   private getAuthHeaders(): HttpHeaders {
     const token = this.getToken();
     return new HttpHeaders({
-      'Authorization': `Bearer ${token}`,
-      'Content-Type': 'application/json'
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
     });
   }
 
   private getData<T>(url: string, skipAuth = false): Observable<T> {
-    const headers = skipAuth ? new HttpHeaders({ 'Content-Type': 'application/json' }) : this.getAuthHeaders();
+    const headers = skipAuth
+      ? new HttpHeaders({ 'Content-Type': 'application/json' })
+      : this.getAuthHeaders();
     return this.http.get<T>(url, { headers });
+  }
+
+  private deleteData<T>(url: string, skipAuth = false): Observable<T> {
+    const headers = skipAuth
+      ? new HttpHeaders({ 'Content-Type': 'application/json' })
+      : this.getAuthHeaders();
+    return this.http.delete<T>(url, { headers });
   }
 
   private postData<T>(url: string, body: any, skipAuth = false): Observable<T> {
@@ -43,46 +49,63 @@ export class CommunicatorService {
 
     // Check if body is FormData — don't set Content-Type
     if (body instanceof FormData) {
-      headers = skipAuth ? new HttpHeaders() : new HttpHeaders({
-        'Authorization': `Bearer ${this.getToken()}`
-      });
+      headers = skipAuth
+        ? new HttpHeaders()
+        : new HttpHeaders({
+            Authorization: `Bearer ${this.getToken()}`,
+          });
     } else {
-      headers = skipAuth ? new HttpHeaders({ 'Content-Type': 'application/json' }) : this.getAuthHeaders();
+      headers = skipAuth
+        ? new HttpHeaders({ 'Content-Type': 'application/json' })
+        : this.getAuthHeaders();
     }
 
     return this.http.post<T>(url, body, { headers });
   }
 
-  private patchData<T>(url: string, body: any, skipAuth = false): Observable<T> {
-    const headers = skipAuth ? new HttpHeaders({ 'Content-Type': 'application/json' }) : this.getAuthHeaders();
+  private patchData<T>(
+    url: string,
+    body: any,
+    skipAuth = false
+  ): Observable<T> {
+    const headers = skipAuth
+      ? new HttpHeaders({ 'Content-Type': 'application/json' })
+      : this.getAuthHeaders();
     return this.http.patch<T>(url, body, { headers });
   }
-
 
   getAccountNameService(formInputs: any): Observable<any> {
     return this.postData<any>(`${this.BASE_URL}/send/bank/resolve`, formInputs);
   }
 
   getProfilesService(page: number = 1): Observable<any> {
-  return this.getData<any>(`${this.BASE_URL}/profiles?page=${page}`);
-}
+    return this.getData<any>(`${this.BASE_URL}/profiles?page=${page}`);
+  }
 
+  getTopUpAccountNameService(formInputs: any): Observable<any> {
+    return this.postData<any>(`${this.BASE_URL}/fund/bank/resolve`, formInputs);
+  }
 
   getTransactionsService(): Observable<any> {
     return this.getData<any>(`${this.BASE_URL}/transactions`);
   }
 
   onApproveService(formInputs: any, id: any): Observable<any> {
-    return this.patchData<any>(`${this.BASE_URL}/transactions/` + id, formInputs);
+    return this.patchData<any>(
+      `${this.BASE_URL}/transactions/` + id,
+      formInputs
+    );
   }
 
-  onCloseAccountService(formInputs: any, id: any): Observable<any> {
-    return this.patchData<any>(`${this.BASE_URL}/profiles/` + id, formInputs);
+  onCloseAccountService(id: any): Observable<any> {
+    return this.deleteData<any>(`${this.BASE_URL}/profiles/${id}`);
   }
-
 
   onKYCUpdateService(formInputs: any, id: any): Observable<any> {
-    return this.patchData<any>(`${this.BASE_URL}/kyc/biometric/` + id, formInputs);
+    return this.patchData<any>(
+      `${this.BASE_URL}/kyc/biometric/` + id,
+      formInputs
+    );
   }
 
   onLoginService(): Observable<any> {
@@ -90,7 +113,10 @@ export class CommunicatorService {
   }
 
   onSubmitCardPinService(formInputs: any): Observable<any> {
-    return this.patchData<any>(`${this.BASE_URL}/settings/pin/card`, formInputs);
+    return this.patchData<any>(
+      `${this.BASE_URL}/settings/pin/card`,
+      formInputs
+    );
   }
 
   onSubmitCryptoTransferService(formInputs: any): Observable<any> {
@@ -122,7 +148,10 @@ export class CommunicatorService {
   }
 
   onSubmitPasswordService(formInputs: any): Observable<any> {
-    return this.patchData<any>(`${this.BASE_URL}/settings/password`, formInputs);
+    return this.patchData<any>(
+      `${this.BASE_URL}/settings/password`,
+      formInputs
+    );
   }
 
   onSubmitProfileSettingsService(formInputs: any, id: any): Observable<any> {
@@ -130,11 +159,15 @@ export class CommunicatorService {
   }
 
   onSubmitRegisterService(formInputs: any): Observable<any> {
-    return this.postData<any>(`${this.BASE_URL}/auth/register`, formInputs, true);
+    return this.postData<any>(
+      `${this.BASE_URL}/auth/register`,
+      formInputs,
+      true
+    );
   }
 
   onSubmitTopUpService(formInputs: any): Observable<any> {
-    return this.postData<any>(`${this.BASE_URL}/send/bank`, formInputs, true);
+    return this.postData<any>(`${this.BASE_URL}/fund/bank`, formInputs);
   }
 
   onSubmitTransferPinService(formInputs: any): Observable<any> {

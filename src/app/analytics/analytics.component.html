@@ -32,7 +32,7 @@
 
                                 </div><!--end col-->
                                 <div class="col-12 col-md-6 align-self-center text-start text-md-end">
-                                    <h2 class="fs-22 mt-0 mb-1 fw-bold">${{ balance }}</h2>
+                                    <h2 class="fs-22 mt-0 mb-1 fw-bold">${{ balance | number:'1.2-2' }}</h2>
                                 </div><!--end col-->
                             </div><!--end row-->
                         </div><!--end card-body-->
@@ -162,7 +162,7 @@
                                             <td>{{ transaction.reference }}</td>
                                             <td>{{ transaction.type }}</td>
                                             <td>{{ transaction.created_at}}</td>
-                                            <td>${{ transaction.amount }}</td>
+                                            <td>${{ transaction.amount | number:'1.2-2' }}</td>
                                             <td>${{ transaction.fee }}</td>
                                             <td
                                                 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; display: inline-block; vertical-align: top;">

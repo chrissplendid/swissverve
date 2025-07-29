@@ -1,119 +1,132 @@
 <!-- TOP UP COMPONENT -->
 <div class="page-wrapper">
-  <!-- Page Content-->
+  <!-- Page Content -->
   <div class="page-content">
     <div class="container-xxl">
       <div class="row justify-content-center">
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <div class="row align-items-center">
-                <div class="col">
-                  <h4 class="card-title">Top Up Account</h4>
-                </div>
-                <!--end col-->
-              </div>
-              <!--end row-->
+              <h4 class="card-title">Top Up Account</h4>
             </div>
-            <!--end card-header-->
-            <form
-              (ngSubmit)="topUpAccount(topUpData)"
-              #topUpData="ngForm"
-            >
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-lg-12">
-                    <div class="mb-3 row">
-                      <label
-                        for="example-text-input"
-                        class="col-sm-2 col-form-label"
-                        >Account Number</label
-                      >
-                      <div class="col-sm-10">
-                        <input
-                          class="form-control"
-                          disabled
-                          name="account_number"
-                          type="number"
-                          placeholder="Enter bank account number"
-                          id="amount"
-                          ngModel
-                          required
-                          style="
-                            background-color: var(--bs-startbar-bg);
-                            color: #fd7e14;
-                          "
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <!--end col-->
 
-                  <div class="col-lg-12">
-                    <div class="mb-3 row">
-                      <label
-                        for="example-text-input"
-                        class="col-sm-2 col-form-label"
-                        >Amount</label
-                      >
-                      <div class="col-sm-10">
-                        <input
-                          class="form-control"
-                          disabled
-                          name="amount"
-                          type="number"
-                          placeholder="Enter amount"
-                          id="amount"
-                          ngModel
-                          required
-                          style="
-                            background-color: var(--bs-startbar-bg);
-                            color: #fd7e14;
-                          "
-                        />
-                      </div>
-                    </div>
+            <form (ngSubmit)="topUpAccount(topUpData)" #topUpData="ngForm">
+              <div class="card-body">
+                <!-- Account Number -->
+                <div class="mb-3 row">
+                  <label for="number" class="col-sm-2 col-form-label">Account Number</label>
+                  <div class="col-sm-10">
+                    <input
+                      #accountInput
+                      type="number"
+                      id="number"
+                      name="number"
+                      class="form-control"
+                      placeholder="Enter bank account number"
+                      ngModel
+                      required
+                      [style.background-color]="'var(--bs-startbar-bg)'"
+                      [style.color]="'#fd7e14'"
+                    />
                   </div>
-                  <!--end col-->
                 </div>
-                <!--end row-->
-                <button type="submit" class="btn btn-primary">Top Up</button>
+
+                <!-- Account Name -->
+                <div class="mb-3 row">
+                  <label for="name" class="col-sm-2 col-form-label">Account Name</label>
+                  <div class="col-sm-10">
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      class="form-control"
+                      [value]="accountName"
+                      ngModel
+                      disabled
+                      required
+                      [style.background-color]="'var(--bs-startbar-bg)'"
+                      [style.color]="'#fd7e14'"
+                    />
+                  </div>
+                </div>
+
+                <!-- Amount -->
+                <div class="mb-3 row">
+                  <label for="amount" class="col-sm-2 col-form-label">Amount</label>
+                  <div class="col-sm-10">
+                    <input
+                      type="number"
+                      id="amount"
+                      name="amount"
+                      class="form-control"
+                      placeholder="Enter amount"
+                      ngModel
+                      required
+                      [style.background-color]="'var(--bs-startbar-bg)'"
+                      [style.color]="'#fd7e14'"
+                    />
+                  </div>
+                </div>
+
+                <!-- Description -->
+                <div class="mb-3 row">
+                  <label for="description" class="col-sm-2 col-form-label">Description</label>
+                  <div class="col-sm-10">
+                    <input
+                      type="text"
+                      id="description"
+                      name="description"
+                      class="form-control"
+                      placeholder="Enter Transaction Description"
+                      ngModel
+                      required
+                      [style.background-color]="'var(--bs-startbar-bg)'"
+                      [style.color]="'#fd7e14'"
+                    />
+                  </div>
+                </div>
+
+                <!-- Pin -->
+                <div class="mb-3 row">
+                  <label for="pin" class="col-sm-2 col-form-label">Pin</label>
+                  <div class="col-sm-10">
+                    <input
+                      type="password"
+                      id="pin"
+                      name="pin"
+                      class="form-control"
+                      placeholder="Enter Pin"
+                      ngModel
+                      required
+                      [style.background-color]="'var(--bs-startbar-bg)'"
+                      [style.color]="'#fd7e14'"
+                    />
+                  </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-end">
+                  <button type="submit" class="btn btn-primary">Top Up</button>
+                </div>
               </div>
-              <!--end card-body-->
-              
             </form>
-            <!--end of form-->
           </div>
-          <!--end card-->
         </div>
-        <!--end col-->
       </div>
-      <!--end row-->
 
+      <!-- Footer -->
+      <footer class="footer text-center text-sm-start d-print-none mt-4">
+        <div class="card mb-0 rounded-bottom-0">
+          <div class="card-body">
+            <p class="text-muted mb-0">© Swissverve</p>
+          </div>
+        </div>
+      </footer>
     </div>
-    <!-- container -->
-    <!--Start Footer-->
-
-    <footer class="footer text-center text-sm-start d-print-none">
-      <div class="container-xxl">
-        <div class="row">
-          <div class="col-12">
-            <div class="card mb-0 rounded-bottom-0">
-              <div class="card-body">
-                <p class="text-muted mb-0">© Swissverve</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!--end footer-->
   </div>
-  <!-- end page content -->
 </div>
-<!-- end page-wrapper -->
 
+<!-- Spinner -->
 <ngx-spinner
   bdColor="rgba(0,0,0,0.8)"
   size="medium"
