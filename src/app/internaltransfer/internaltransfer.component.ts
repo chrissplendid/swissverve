@@ -16,6 +16,7 @@ import Swal from 'sweetalert2';
 export class InternaltransferComponent implements AfterViewInit {
   @ViewChild('accountInput') accountInput!: ElementRef;
   accountName: any;
+  receivernumber: any;
   accName: any;
   accountNumber: any;
   amount: any;
@@ -93,6 +94,7 @@ export class InternaltransferComponent implements AfterViewInit {
         this.transfer = false;
         this.accName = res.data.wallet.user.profile.first_name + " " + res.data.wallet.user.profile.last_name;
         this.accountNumber = res.data.wallet.account_number;
+        this.receivernumber = internalTransferData.value.accountNumber
         this.amount = res.data.amount;
         this.date = res.data.updated_at;
         this.fee = res.data.fee;
